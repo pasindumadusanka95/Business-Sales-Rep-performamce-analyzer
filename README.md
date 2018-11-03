@@ -1,3 +1,1 @@
-# Business-Sales-Rep-performamce-analyzer
-
-Web based application implemented using laravel
+-Web based application implemented using laravel
