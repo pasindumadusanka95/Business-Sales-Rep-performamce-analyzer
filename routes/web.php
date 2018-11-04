@@ -23,3 +23,18 @@ Route::get('/admin', function () {
     return view('dashboard');
 });
 
+Route::get('/admin/user', function () {
+    return view('user');
+});
+
+Route::get('/admin/table', function () {
+    return view('table');
+});
+
+Route::get('/admin/icons', function () {
+    return view('icons');
+});
+Route::get('/admin/typography', function () {
+    return view('typography');
+});
+
