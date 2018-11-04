@@ -114,3 +114,7 @@
 #20 C:\\xampp\\htdocs\\agency\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #21 {main}
 "} 
+[2018-11-03 16:49:22] local.ERROR: Illuminate\Routing\Router::loadRoutes(): Failed opening required 'E:\myprojects\Business-Sales-Rep-performamce-analyzer\routes/api.php' (include_path='.;C:\php\pear') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\Router::loadRoutes(): Failed opening required 'E:\\myprojects\\Business-Sales-Rep-performamce-analyzer\outes/api.php' (include_path='.;C:\\php\\pear') at E:\\myprojects\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php:414)
+[stacktrace]
+#0 {main}
+"} 
