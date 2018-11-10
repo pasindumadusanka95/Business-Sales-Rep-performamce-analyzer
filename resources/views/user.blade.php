@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Material Dashboard by Creative Tim
+        Business Rep
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
     <link href="{{ asset('css/material-dashboard.css') }}" rel="stylesheet" type="text/css" >
-    <!-- CSS Just for demo purpose, don't include it in your project -->
+
     <link href="{{ asset('demo/demo.css') }}"  rel="stylesheet" />
 </head>
 
@@ -27,11 +27,7 @@
 
           Tip 2: you can also add an image using data-image tag
       -->
-        <div class="logo">
-            <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
-            </a>
-        </div>
+
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item  ">
