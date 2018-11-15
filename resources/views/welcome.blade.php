@@ -51,16 +51,16 @@
         </button>
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{{URL::to('/')}}/assets/img/blurred-image-1.jpg">
-        <ul class="navbar-nav">
+      <ul class="navbar-nav">
           
          
             @if (Route::has('login'))
                 
-                    @auth
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/home') }}">Home</a></li>
+                    @auth              
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/home') }}">Home</a></li>
                     @else
-                    <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                    <!--<li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>!-->
+                    <li class="nav-item active"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+                    <!--li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li-->
                     @endauth
                 
             @endif

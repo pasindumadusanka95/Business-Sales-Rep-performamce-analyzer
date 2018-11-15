@@ -2763,3 +2763,7 @@
 #20 D:\\SalesRep\\analyzer\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #21 {main}
 "} 
+[2018-11-15 15:38:37] local.ERROR: Cannot declare class AddUserRolesToUsers, because the name is already in use {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot declare class AddUserRolesToUsers, because the name is already in use at D:\\SalesRep\\analyzer\\database\\migrations\\2018_11_15_152815_add_user_roles_to_users.php:32)
+[stacktrace]
+#0 {main}
+"} 

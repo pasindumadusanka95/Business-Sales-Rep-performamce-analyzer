@@ -13,3 +13,7 @@ trim_trailing_whitespace = false
 
 [*.yml]
 indent_size = 2
+
+"editor.formatOnSave": false,
+"[php]": {
+"editor.formatOnSave": true
