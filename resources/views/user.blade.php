@@ -49,9 +49,9 @@
                     </a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="{{ asset('admin/typography') }}">
+                    <a class="nav-link" href="{{ asset('admin/registration') }}">
                         <i class="material-icons">library_books</i>
-                        <p>Typography</p>
+                        <p>Registration</p>
                     </a>
                 </li>
                 <li class="nav-item  ">
