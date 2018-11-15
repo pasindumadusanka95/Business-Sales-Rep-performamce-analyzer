@@ -35,7 +35,7 @@ Route::get('/admin/icons', function () {
     return view('icons');
 });
 Route::get('/admin/typography', function () {
-    return view('typography');
+    return view('registration');
 });
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
