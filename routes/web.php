@@ -12,12 +12,18 @@
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
 
+Route::get('/home', function () {
+    return view('welcome');
+});
+Route::get('/logout', function () {
+    return redirect('/home');
+});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
 
 Route::get('/admin', 'DashboardController@admin' );
 
@@ -37,9 +43,14 @@ Route::get('/admin/icons', function () {
 Route::get('/reg', function () {
     return view('auth.register');
 });
+<<<<<<< HEAD
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
 Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
+=======
+Route::get('/salesRep{name}', function () {
+    return view('sales_rep.salesrep');
+>>>>>>> 81908598e8c43605d8135e3936739145d28baa9d
 });

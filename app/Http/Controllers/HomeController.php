@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Auth;
+use Redirect;
 
 class HomeController extends Controller
 {
@@ -25,16 +26,26 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $name = $user->{'name'};
         //DB::table('users')->where('name', 'John')->first();
 
         //echo $user->{'userRoles'};
         //$userrole = user.userRoles;
 
         if ($user->{'user_role'} == 0) {
-            return view('dashboard');
+            //return view('dashboard');
+            return Redirect::to('/admin');
         } else if ($user->{'user_role'} == 1) {
-            return view('sales_rep.salesrep');
+            return redirect("/salesRep" . $name);
+            //return view('sales_rep.salesrep');
+        } else {
+            return redirect()->route('home');
         }
 
+    }
+
+    public function return_home()
+    {
+        return view('welcome');
     }
 }
