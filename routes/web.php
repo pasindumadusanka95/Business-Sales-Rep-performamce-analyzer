@@ -34,10 +34,11 @@ Route::get('/admin/table', function () {
 Route::get('/admin/icons', function () {
     return view('icons');
 });
-Route::get('/admin/typography', function () {
+Route::get('/reg', function () {
     return view('registration');
 });
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
+
 
