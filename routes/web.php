@@ -40,3 +40,6 @@ Route::get('/reg', function () {
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
+Route::get('/stockkeeper', function () {
+    return view('stock_keeper/stock_keeper_profile');
+});
