@@ -19,9 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/admin', function () {
-    return view('dashboard');
-});
+Route::get('/admin', 'DashboardController@admin' );
+
+Route::get('/reg', 'DashboardController@register' );
 
 Route::get('/admin/user', function () {
     return view('user');
@@ -34,9 +34,9 @@ Route::get('/admin/table', function () {
 Route::get('/admin/icons', function () {
     return view('icons');
 });
-Route::get('/reg', function () {
-    return view('registration');
-});
+//Route::get('/reg', function () {
+   // return view('registration');
+//});
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
