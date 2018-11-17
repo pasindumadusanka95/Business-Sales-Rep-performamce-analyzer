@@ -41,7 +41,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '104.197.88.22'),
+            'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'agency'),
             'username' => env('DB_USERNAME', 'root'),
@@ -52,12 +52,14 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
-            'options' => array(
-                PDO::MYSQL_ATTR_SSL_KEY => '../client-key.pem',
-                PDO::MYSQL_ATTR_SSL_CERT => '../client-cert.pem',
-                PDO::MYSQL_ATTR_SSL_CA => '../server-ca.pem',
-                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
-            ),
+            /*
+        'options' => array(
+        PDO::MYSQL_ATTR_SSL_KEY => '../client-key.pem',
+        PDO::MYSQL_ATTR_SSL_CERT => '../client-cert.pem',
+        PDO::MYSQL_ATTR_SSL_CA => '../server-ca.pem',
+        PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+        ),
+         */
         ],
 
         'pgsql' => [
