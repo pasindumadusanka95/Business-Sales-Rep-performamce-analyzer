@@ -83,10 +83,14 @@
                                 </a>
                             </li>
                             <li _ngcontent-c1="" class="nav-item">
-                                <a _ngcontent-c1="" class="nav-link btn btn-neutral" href="https://www.creative-tim.com/product/now-ui-kit-pro-angular"
-                                    target="_blank">
-                                    <p _ngcontent-c1="">Sign Out</p>
+                                <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                    <button type="button" class="btn btn-neutral">Sign Out</button>
                                 </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                             </li>
                         </ul>
                     </div>
