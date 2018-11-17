@@ -11,7 +11,7 @@ return [
     | to use as your default connection for all database work. Of course
     | you may use many connections at once using the Database library.
     |
-    */
+     */
 
     'default' => env('DB_CONNECTION', 'mysql'),
 
@@ -29,7 +29,7 @@ return [
     | so make sure you have the driver for your particular database of
     | choice installed on your machine before you begin development.
     |
-    */
+     */
 
     'connections' => [
 
@@ -41,7 +41,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', 'localhost'),
+            'host' => env('DB_HOST', 'null'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'agency'),
             'username' => env('DB_USERNAME', 'root'),
@@ -52,6 +52,12 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'options' => array(
+                PDO::MYSQL_ATTR_SSL_KEY => '../client-key.pem',
+                PDO::MYSQL_ATTR_SSL_CERT => '../client-cert.pem',
+                PDO::MYSQL_ATTR_SSL_CA => '../server-ca.pem',
+                PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+            ),
         ],
 
         'pgsql' => [
@@ -89,7 +95,7 @@ return [
     | your application. Using this information, we can determine which of
     | the migrations on disk haven't actually been run in the database.
     |
-    */
+     */
 
     'migrations' => 'migrations',
 
@@ -102,7 +108,7 @@ return [
     | provides a richer set of commands than a typical key-value systems
     | such as APC or Memcached. Laravel makes it easy to dig right in.
     |
-    */
+     */
 
     'redis' => [
 

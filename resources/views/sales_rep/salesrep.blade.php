@@ -3,7 +3,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Now UI Kit Angular by Creative Tim</title>
+    <title>SalesRep View</title>
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no" name="viewport">
     <base href="https://demos.creative-tim.com/now-ui-kit-angular/">
     <!-- Canonical SEO -->
@@ -69,62 +69,23 @@
                             </div>
                         </div>
                     </div>
-                    <div _ngcontent-c1="" class="navbar-translate">
-                        <a _ngcontent-c1="" class="navbar-brand" ngbtooltip="Designed by Invision. Coded by Creative Tim"
-                            placement="bottom" href="/now-ui-kit-angular/index">
-                            Now Ui Kit
-                        </a>
-                        <button _ngcontent-c1="" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
-                            class="navbar-toggler" data-target="#navbarToggler" data-toggle="collapse" type="button">
-                            <span _ngcontent-c1="" class="navbar-toggler-bar bar1"></span>
-                            <span _ngcontent-c1="" class="navbar-toggler-bar bar2"></span>
-                            <span _ngcontent-c1="" class="navbar-toggler-bar bar3"></span>
-                        </button>
-                    </div>
                     <div _ngcontent-c1="" class="collapse navbar-collapse" data-color="orange" data-nav-image="assets/img/blurred-image-1.jpg">
                         <ul _ngcontent-c1="" class="navbar-nav ml-auto">
                             <li _ngcontent-c1="" class="nav-item">
                                 <a _ngcontent-c1="" class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular"
                                     target="_blank">
-                                    <i _ngcontent-c1="" class="now-ui-icons arrows-1_cloud-download-93"></i>
-                                    <p _ngcontent-c1="">Download</p>
+                                    <p _ngcontent-c1="">My Performance</p>
                                 </a>
                             </li>
                             <li _ngcontent-c1="" class="nav-item">
                                 <a _ngcontent-c1="" class="nav-link" href="/now-ui-kit-angular/documentation">
-                                    <i _ngcontent-c1="" class="now-ui-icons files_paper"></i>
-                                    <p _ngcontent-c1="">Documentation</p>
+                                    <p _ngcontent-c1="">My Sales</p>
                                 </a>
                             </li>
                             <li _ngcontent-c1="" class="nav-item">
                                 <a _ngcontent-c1="" class="nav-link btn btn-neutral" href="https://www.creative-tim.com/product/now-ui-kit-pro-angular"
                                     target="_blank">
-                                    <i _ngcontent-c1="" class="now-ui-icons arrows-1_share-66"></i>
-                                    <p _ngcontent-c1="">Upgrade to PRO</p>
-                                </a>
-                            </li>
-                            <li _ngcontent-c1="" class="nav-item">
-                                <a _ngcontent-c1="" class="nav-link" data-original-title="Follow us on Twitter"
-                                    data-placement="bottom" href="https://twitter.com/CreativeTim" rel="tooltip" target="_blank"
-                                    title="">
-                                    <i _ngcontent-c1="" class="fa fa-twitter"></i>
-                                    <p _ngcontent-c1="" class="d-lg-none d-xl-none">Twitter</p>
-                                </a>
-                            </li>
-                            <li _ngcontent-c1="" class="nav-item">
-                                <a _ngcontent-c1="" class="nav-link" data-original-title="Like us on Facebook"
-                                    data-placement="bottom" href="https://www.facebook.com/CreativeTim" rel="tooltip"
-                                    target="_blank" title="">
-                                    <i _ngcontent-c1="" class="fa fa-facebook-square"></i>
-                                    <p _ngcontent-c1="" class="d-lg-none d-xl-none">Facebook</p>
-                                </a>
-                            </li>
-                            <li _ngcontent-c1="" class="nav-item">
-                                <a _ngcontent-c1="" class="nav-link" data-original-title="Follow us on Instagram"
-                                    data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" rel="tooltip"
-                                    target="_blank" title="">
-                                    <i _ngcontent-c1="" class="fa fa-instagram"></i>
-                                    <p _ngcontent-c1="" class="d-lg-none d-xl-none">Instagram</p>
+                                    <p _ngcontent-c1="">Sign Out</p>
                                 </a>
                             </li>
                         </ul>
@@ -163,17 +124,6 @@
                 </div>
                 <div _ngcontent-c2="" class="section">
                     <div _ngcontent-c2="" class="container">
-                        <div _ngcontent-c2="" class="button-container">
-                            <a _ngcontent-c2="" class="btn btn-primary btn-round btn-lg" href="#button">Follow</a>
-                            <a _ngcontent-c2="" class="btn btn-default btn-round btn-lg btn-icon" href="#button" rel="tooltip"
-                                title="Follow me on Twitter">
-                                <i _ngcontent-c2="" class="fa fa-twitter"></i>
-                            </a>
-                            <a _ngcontent-c2="" class="btn btn-default btn-round btn-lg btn-icon" href="#button" rel="tooltip"
-                                title="Follow me on Instagram">
-                                <i _ngcontent-c2="" class="fa fa-instagram"></i>
-                            </a>
-                        </div>
                         <h3 _ngcontent-c2="" class="title">About me</h3>
                         <h5 _ngcontent-c2="" class="description">An artist of considerable range, Ryan — the name taken
                             by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his
@@ -217,20 +167,6 @@
                                         <div role="tabpanel" class="tab-pane active" aria-labelledby="ngb-tab-0" id="ngb-tab-0-panel"
                                             aria-expanded="true">
                                             <!---->
-                                            <div _ngcontent-c2="" class="row">
-                                                <div _ngcontent-c2="" class="col-md-10 ml-auto mr-auto">
-                                                    <div _ngcontent-c2="" class="row collections">
-                                                        <div _ngcontent-c2="" class="col-md-6">
-                                                            <img _ngcontent-c2="" alt="" class="img-raised" src="assets/img/bg1.jpg">
-                                                            <img _ngcontent-c2="" alt="" class="img-raised" src="assets/img/bg3.jpg">
-                                                        </div>
-                                                        <div _ngcontent-c2="" class="col-md-6">
-                                                            <img _ngcontent-c2="" alt="" class="img-raised" src="assets/img/bg8.jpg">
-                                                            <img _ngcontent-c2="" alt="" class="img-raised" src="assets/img/bg7.jpg">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                         </div>
 
