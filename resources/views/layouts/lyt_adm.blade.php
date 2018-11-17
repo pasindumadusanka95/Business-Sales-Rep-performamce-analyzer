@@ -132,6 +132,16 @@
                   </p>
                 </a>
               </li>
+              <li _ngcontent-c1="" class="nav-item">
+                <a href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                    <button type="button" class="btn btn-neutral">Sign Out</button>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
             </ul>
           </div>
         </div>

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        //DB::table('users')->where('name', 'John')->first();
+
+        //echo $user->{'userRoles'};
+        //$userrole = user.userRoles;
+
+        if ($user->{'user_role'} == 0) {
+            return view('dashboard');
+        } else if ($user->{'user_role'} == 1) {
+            return view('sales_rep.salesrep');
+        }
+
     }
 }
