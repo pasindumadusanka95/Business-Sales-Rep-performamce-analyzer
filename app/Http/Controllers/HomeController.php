@@ -30,9 +30,9 @@ class HomeController extends Controller
         //echo $user->{'userRoles'};
         //$userrole = user.userRoles;
 
-        if ($user->{'userRoles'} == 0) {
+        if ($user->{'user_role'} == 0) {
             return view('dashboard');
-        } else if ($user->{'userRoles'} == 1) {
+        } else if ($user->{'user_role'} == 1) {
             return view('sales_rep.salesrep');
         }
 

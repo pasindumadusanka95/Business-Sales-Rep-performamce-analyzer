@@ -35,7 +35,7 @@ Route::get('/admin/icons', function () {
     return view('icons');
 });
 Route::get('/reg', function () {
-    return view('registration');
+    return view('auth.register');
 });
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
