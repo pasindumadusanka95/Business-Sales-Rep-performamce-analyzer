@@ -25,9 +25,9 @@ Auth::routes();
 
 Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
 
-Route::get('/admin', function () {
-    return view('dashboard');
-});
+Route::get('/admin', 'DashboardController@admin' );
+
+Route::get('/reg', 'DashboardController@register' );
 
 Route::get('/admin/user', function () {
     return view('user');
