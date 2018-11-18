@@ -43,8 +43,11 @@ Route::get('/admin/icons', function () {
 Route::get('/reg', function () {
     return view('auth.register');
 });
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 844e4b3ae5addfbbdfb1c0b8f59a3cd7d68cc62d
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
@@ -52,6 +55,7 @@ Route::get('/salesRep', function () {
 Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
 });
+<<<<<<< HEAD
 
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
@@ -61,3 +65,8 @@ Route::get('/salesRep{name}', function () {
 Route::get('/stockkeeper{name}', function () {
     return view('stockkeeper.stock_keeper_profile');
 });
+=======
+Route::get('/salesRep{name}', function () {
+    return view('sales_rep.salesrep');
+});
+>>>>>>> 844e4b3ae5addfbbdfb1c0b8f59a3cd7d68cc62d
