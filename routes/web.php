@@ -12,14 +12,14 @@
  */
 
 Route::get('/', function () {
-    return redirect('/home');
-});
+    return view('welcome');
+})->name('welcome');
 
 Route::get('/home', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
 Route::get('/logout', function () {
-    return redirect('/home');
+    return redirect('/welcome');
 });
 Auth::routes();
 
@@ -27,7 +27,11 @@ Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
 
 Route::get('/admin', 'DashboardController@admin' );
 
-Route::get('/reg', 'DashboardController@register' );
+Route::post('admin/reg', 'DashboardController@register' )->name('reg');
+
+Route::get('/admin/registration', function () {
+    return view('registration');
+})->name('registration');
 
 Route::get('/admin/user', function () {
     return view('user');
@@ -37,18 +41,13 @@ Route::get('/admin/table', function () {
     return view('table');
 });
 
-Route::get('/admin/icons', function () {
-    return view('icons');
-});
-Route::get('/reg', function () {
-    return view('auth.register');
-});
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
 Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
 });
+
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
 });

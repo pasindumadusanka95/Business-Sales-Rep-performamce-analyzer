@@ -4,7 +4,7 @@
     Dashboard
 @endsection
 
-@section('adm')
+@section('content')
 <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">

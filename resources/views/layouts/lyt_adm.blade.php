@@ -3,11 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="{{URL::to('/')}}/assets-dash/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{URL::to('/')}}/assets-dash/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Material Dashboard by Creative Tim
+    Sales Rep Performance Analyzer
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -28,14 +26,14 @@
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="" class="simple-text logo-normal">
+          Sales Rep Analyzer
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="{{url('/admin')}}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -53,24 +51,11 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{{url('/reg')}}">
+            <a class="nav-link" href="{{url('/admin/registration')}}">
               <i class="material-icons">library_books</i>
               <p>Registration</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="{{url('/admin/icons')}}">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          
-          <!-- <li class="nav-item active-pro ">
-                <a class="nav-link" href="./upgrade.html">
-                    <i class="material-icons">unarchive</i>
-                    <p>Upgrade to PRO</p>
-                </a>
-            </li> -->
         </ul>
       </div>
     </div>
@@ -147,7 +132,7 @@
         </div>
       </nav>
      <div class="content">
-         @yield('adm')
+         @yield('content')
      </div>
       <footer class="footer">
         <div class="container-fluid">
