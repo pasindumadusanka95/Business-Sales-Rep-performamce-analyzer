@@ -43,7 +43,6 @@ Route::get('/admin/icons', function () {
 Route::get('/reg', function () {
     return view('auth.register');
 });
-<<<<<<< HEAD
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
@@ -52,5 +51,4 @@ Route::get('/stockkeeper', function () {
 =======
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
->>>>>>> 81908598e8c43605d8135e3936739145d28baa9d
 });
