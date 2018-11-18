@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\SupplierData;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,7 +11,10 @@ use Illuminate\Support\Facades\Input;
 class DashboardController extends Controller
 {
     public function admin(){
-        return  view('dashboard');
+
+        $suppliers=SupplierData::all();
+
+        return view('dashboard',compact('suppliers'));
     }
 
     public function registration(){
