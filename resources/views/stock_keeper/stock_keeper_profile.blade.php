@@ -100,7 +100,7 @@
     <app-profile _nghost-c2="">
         <div _ngcontent-c2="" class="wrapper">
             <div _ngcontent-c2="" class="page-header page-header-small" filter-color="orange">
-                <div _ngcontent-c2="" class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url(&quot;assets/img/bg5.jpg&quot;); transform: translate3d(0px, 0px, 0px);">
+                <div _ngcontent-c2="" class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url({{'assets/img/bg.jpg'}}); transform: translate3d(0px, 0px, 0px);">
                 </div>
                 <div _ngcontent-c2="" class="container">
                     <div _ngcontent-c2="" class="content-center">
@@ -173,7 +173,7 @@
             </div>
             <footer _ngcontent-c2="" class="footer footer-default">
                 <div _ngcontent-c2="" class="container">
-                    
+
                     <div _ngcontent-c2="" class="copyright">
                         ©
                         2018

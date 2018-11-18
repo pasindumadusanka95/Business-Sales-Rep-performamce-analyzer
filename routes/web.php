@@ -41,13 +41,34 @@ Route::get('/admin/table', function () {
     return view('table');
 });
 
+Route::get('/admin/icons', function () {
+    return view('icons');
+});
+Route::get('/reg', function () {
+    return view('auth.register');
+});
+
+
+
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
+
 Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
 });
 
+
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
+});
+
+
+Route::get('/salesRep{name}', function () {
+    return view('sales_rep.salesrep');
+
+});
+
+Route::get('/stockkeeper{name}', function () {
+    return view('stockkeeper.stock_keeper_profile');
 });
