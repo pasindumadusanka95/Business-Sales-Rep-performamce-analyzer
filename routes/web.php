@@ -48,7 +48,7 @@ Route::get('/salesRep', function () {
 });
 Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
-=======
+});
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
 });
