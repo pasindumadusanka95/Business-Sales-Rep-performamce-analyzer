@@ -25,9 +25,9 @@ Auth::routes();
 
 Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
 
-Route::get('/admin', 'DashboardController@admin' );
+Route::get('/admin', 'DashboardController@admin');
 
-Route::post('admin/reg', 'DashboardController@register' )->name('reg');
+Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
 Route::get('/admin/registration', function () {
     return view('registration');
@@ -48,8 +48,6 @@ Route::get('/reg', function () {
     return view('auth.register');
 });
 
-
-
 Route::get('/salesRep', function () {
     return view('sales_rep/salesrep');
 });
@@ -58,11 +56,9 @@ Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
 });
 
-
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
 });
-
 
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
@@ -70,5 +66,5 @@ Route::get('/salesRep{name}', function () {
 });
 
 Route::get('/stockkeeper{name}', function () {
-    return view('stockkeeper.stock_keeper_profile');
+    return view('stock_keeper.stock_keeper_profile');
 });

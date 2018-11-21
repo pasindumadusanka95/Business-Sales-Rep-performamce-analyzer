@@ -97,7 +97,7 @@
                                 </div>
                                 <div class="form-check">
                                         <label class="form-check-label">
-                                          <input class="form-check-input" type="radio" name="userrole" id="userrole2" value="2" > Sales Rep
+                                          <input class="form-check-input" type="radio" name="userrole" id="userrole2" value="1" > Sales Rep
                                           <span class="circle">
                                             <span class="check"></span>
                                           </span>

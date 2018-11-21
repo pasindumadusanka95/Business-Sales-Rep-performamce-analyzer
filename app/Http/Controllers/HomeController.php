@@ -38,8 +38,8 @@ class HomeController extends Controller
         } else if ($user->{'user_role'} == 1) {
             return redirect("/salesRep" . $name);
             //return view('sales_rep.salesrep');
-        } else {
-            return redirect()->route('home');
+        } else if ($user->{'user_role'} == 2) {
+            return redirect("/stockkeeper" . $name);
         }
 
     }

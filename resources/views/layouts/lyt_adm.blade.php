@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -32,25 +31,25 @@
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class = "nav-item {{(Helper::current_page("admin")? 'active ': '')}}">
             <a class="nav-link" href="{{url('/admin')}}">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class = "nav-item {{(Helper::current_page("admin/user")? 'active ': '')}}">
             <a class="nav-link" href="{{url('/admin/user')}}">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class = "nav-item {{(Helper::current_page("admin/table")? 'active ': '')}}">
             <a class="nav-link" href="{{url('/admin/table')}}">
               <i class="material-icons">content_paste</i>
               <p>Table List</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class = "nav-item {{(Helper::current_page("admin/registration")? 'active ': '')}}">
             <a class="nav-link" href="{{url('/admin/registration')}}">
               <i class="material-icons">library_books</i>
               <p>Registration</p>
