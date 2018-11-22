@@ -19,8 +19,44 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
 
-  
-
+  <style>
+    .bmd-form-group-long{
+        width: 653px;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+    .bmd-form-group-short{
+        padding: 10px;
+        margin: 10px,10px,10px,10px;
+        width: 323px;
+        position: relative;
+        display: inline-block;
+    }
+    .bmd-form-group-date{
+        padding: 10px;
+        margin: 10px,10px,10px,10px;
+        width: 150px;
+        position: relative;
+        display: inline-block;
+        float: right;
+    }
+    .row-sales{
+        height: auto;
+    }
+    .col-sales{
+        width: auto;
+        padding: 10px;
+    }
+    .pull-right-sales{
+        padding: 15px;
+        margin: 20px;
+        width: 100px;
+        height: auto;
+        float: right;
+        text-align: center;
+    }
+        </style>
 </head>
 
 
@@ -117,18 +153,20 @@
                     </div>
                     <div class="card-body">
                       <form>
-                        <div class="container">
-                            <div class="form-group bmd-form-group-short">
+                        <div class="row-sales">
+                            <div class="form-group bmd-form-group-date">
+                                <label class="bmd-label-floating">Date of Sale</label>
                           <input class="date form-control" type="text">
                             </div>
-                        </div>
+                   
 
                           <script type="text/javascript">
 
                             $('.date').datepicker({
 
                               format: 'mm-dd-yyyy',
-                              orientation: "top right"
+                              orientation: "left",
+                              todayHighlight:true
 
                             });
 
