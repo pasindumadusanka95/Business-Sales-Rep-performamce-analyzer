@@ -14,12 +14,11 @@
                             <i class="material-icons">content_copy</i>
                         </div>
                         <p class="card-category">Total Sales</p>
-                        <h3 class="card-title">  </h3>
+                        <h3 class="card-title"> {{$totalsales}} </h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons text-danger">warning</i>
-                            <a href="#pablo">Get More Space...</a>
+                            <i class="material-icons">local_offer</i> up to date
                         </div>
                     </div>
                 </div>
@@ -31,7 +30,7 @@
                             <i class="material-icons">store</i>
                         </div>
                         <p class="card-category">Total Revenue</p>
-                        <h3 class="card-title"> </h3>
+                        <h3 class="card-title"> {{$totalrevenue}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
