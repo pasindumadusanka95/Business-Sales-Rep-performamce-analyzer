@@ -16,8 +16,10 @@ class DashboardController extends Controller
     {
 
         $suppliers = SupplierData::all();
+        $repcounter= SalesRep::count();
 
-        return view('dashboard', compact('suppliers'));
+
+        return view('dashboard', compact('suppliers','repcounter'));
     }
 
     public function registration()
@@ -74,4 +76,6 @@ class DashboardController extends Controller
 
         return redirect()->route('registration');
     }
+
+
 }
