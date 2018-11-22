@@ -14,7 +14,7 @@ class CreateSalesrepTable extends Migration
     public function up()
     {
         Schema::create('salesrep', function (Blueprint $table) {
-            $table->timestamps();
+            $table->integer('id');
             $table->string('name');
             $table->string('email')->unique()->primary();;
             $table->string('address');
