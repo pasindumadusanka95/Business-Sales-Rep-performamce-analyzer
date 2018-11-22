@@ -48,33 +48,32 @@ class DashboardController extends Controller
     protected function register(Request $request)
     {
 
-        $roles = Input::get('role');
-        if ($roles = "0") {
-            $id = 0;
-        }
-        if ($roles = "1") {
-            $id = 1;
-            //create details in the sales rep table too
-            SalesRep::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'address' => $request->address,
-                'phone' => $request->phone,
-            ]);
-        }
-        if ($roles = "2") {
-            $id = 2;
-        }
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'address' => $request->address,
-            'phone' => $request->phone,
-            'user_role' => $id,
-        ]);
+         $roles = Input::get('userrole');
+              
+                //registration - user
+                $user = User::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'password' => Hash::make($request->password),
+                    'address' => $request->address,
+                    'phone' => $request->phone,
+                    'user_role' =>  $roles,
+                ]);
+               //create details in the sales rep table too
+               if($roles=="1"){
+                SalesRep::create([
+                   'id' => $user->id,
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'address' => $request->name,
+                    'phone' => $request->phone,
+                ]);
+               }
 
         return redirect()->route('registration');
+
+
+        
     }
 
 
