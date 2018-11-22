@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\SalesData;
 use App\SalesRep;
 use App\SupplierData;
 use App\User;
@@ -17,9 +18,11 @@ class DashboardController extends Controller
 
         $suppliers = SupplierData::all();
         $repcounter= SalesRep::count();
+        $totalsales= SalesData::count();
+        $totalrevenue=SalesData::sum('total_price');
 
 
-        return view('dashboard', compact('suppliers','repcounter'));
+        return view('dashboard', compact('suppliers','repcounter','totalsales','totalrevenue'));
     }
 
     public function registration()
