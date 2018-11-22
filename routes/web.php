@@ -68,3 +68,4 @@ Route::get('/salesRep{name}', function () {
 Route::get('/stockkeeper{name}', function () {
     return view('stock_keeper.stock_keeper_profile');
 });
+Route::resource('stock', 'stockController');
