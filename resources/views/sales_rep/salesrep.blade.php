@@ -151,8 +151,10 @@
                       <h4 class="card-title">New Sale</h4>
                       <p class="card-category">Add Sale Details</p>
                     </div>
-                    <div class="card-body">
+                    
                     <form method="POST" action="{{ route('addSale') }}">
+                      <div class="card-body">
+                        @csrf
                         <div class="row-sales">
                             <div class="form-group bmd-form-group-date">
                                 <label class="bmd-label-floating">Date of Sale</label>
