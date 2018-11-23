@@ -13,15 +13,12 @@
                         <div class="card-icon">
                             <i class="material-icons">content_copy</i>
                         </div>
-                        <p class="card-category">Used Space</p>
-                        <h3 class="card-title">49/50
-                            <small>GB</small>
-                        </h3>
+                        <p class="card-category">Total Sales</p>
+                        <h3 class="card-title"> {{$totalsales}} </h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons text-danger">warning</i>
-                            <a href="#pablo">Get More Space...</a>
+                            <i class="material-icons">local_offer</i> up to date
                         </div>
                     </div>
                 </div>
@@ -32,8 +29,8 @@
                         <div class="card-icon">
                             <i class="material-icons">store</i>
                         </div>
-                        <p class="card-category">Revenue</p>
-                        <h3 class="card-title">$34,245</h3>
+                        <p class="card-category">Total Revenue</p>
+                        <h3 class="card-title"> {{$totalrevenue}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -46,19 +43,19 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-danger card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">info_outline</i>
+                            <i class="material-icons">people</i>
                         </div>
-                        <p class="card-category">Fixed Issues</p>
-                        <h3 class="card-title">75</h3>
+                        <p class="card-category">No of Sales Reps</p>
+                        <h3 class="card-title">{{$repcounter}}</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">local_offer</i> Tracked from Github
+                            <i class="material-icons">local_offer</i> up to date
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
+           {{-- <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="card card-stats">
                     <div class="card-header card-header-info card-header-icon">
                         <div class="card-icon">
@@ -73,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -93,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+          {{--  <div class="col-md-4">
                 <div class="card card-chart">
                     <div class="card-header card-header-warning">
                         <div class="ct-chart" id="websiteViewsChart"></div>
@@ -108,8 +105,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
+            </div>--}}
+           {{-- <div class="col-md-4">
                 <div class="card card-chart">
                     <div class="card-header card-header-danger">
                         <div class="ct-chart" id="completedTasksChart"></div>
@@ -125,8 +122,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div>--}}
+       {{-- <div class="row">
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-tabs card-header-primary">
@@ -371,7 +368,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-warning">

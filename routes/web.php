@@ -62,8 +62,8 @@ Route::get('/salesRep{name}', function () {
 
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
-
 });
+Route::post('/addSale', 'SalesRepController@addSale')->name('addSale');
 
 Route::get('/stockkeeper{name}', function () {
     return view('stock.stock_keeper_profile');
