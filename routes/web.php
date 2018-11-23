@@ -66,6 +66,10 @@ Route::get('/salesRep{name}', function () {
 });
 
 Route::get('/stockkeeper{name}', function () {
-    return view('stock_keeper.stock_keeper_profile');
+    return view('stock.stock_keeper_profile');
 });
 Route::resource('stock', 'stockController');
+
+Route::get('/add_stock', function () {
+    return view('stockkeeper/add_stock');
+});
