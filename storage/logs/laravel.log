@@ -13152,7 +13152,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #26 D:\\SalesRep\\analyzer\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #27 {main}
 "} 
-[2018-11-22 13:32:30] local.ERROR: Class 'Form' not found (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Class 'Form' not found (View: D:\\SalesRep\\analyzer\esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\storage\\framework\\views\\b70f1eae1868a107c173e053f868db321f95b76f.php:352, Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Form' not found at D:\\SalesRep\\analyzer\\storage\\framework\\views\\b70f1eae1868a107c173e053f868db321f95b76f.php:352)
+[2018-11-22 13:32:30] local.ERROR: Class 'Form' not found (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Class 'Form' not found (View: D:\\SalesRep\\analyzer\
+esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\storage\\framework\\views\\b70f1eae1868a107c173e053f868db321f95b76f.php:352, Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Class 'Form' not found at D:\\SalesRep\\analyzer\\storage\\framework\\views\\b70f1eae1868a107c173e053f868db321f95b76f.php:352)
 [stacktrace]
 #0 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(47): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(Symfony\\Component\\Debug\\Exception\\FatalThrowableError), 1)
 #1 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\SalesRep\\\\ana...', Array)
@@ -13217,7 +13218,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #0 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('sales_rep.sales...', Array)
 #1 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('sales_rep.sales...')
 #2 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(1007): Illuminate\\View\\Factory->make('sales_rep.sales...', Array, Array)
-#3 D:\\SalesRep\\analyzer\outes\\web.php(64): view('sales_rep.sales...')
+#3 D:\\SalesRep\\analyzer\
+outes\\web.php(64): view('sales_rep.sales...')
 #4 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}('Chamodya')
 #5 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(679): Illuminate\\Routing\\Route->run()
@@ -13274,7 +13276,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #0 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('sales_rep.sales...', Array)
 #1 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Factory.php(128): Illuminate\\View\\FileViewFinder->find('sales_rep.sales...')
 #2 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\helpers.php(1007): Illuminate\\View\\Factory->make('sales_rep.sales...', Array, Array)
-#3 D:\\SalesRep\\analyzer\outes\\web.php(64): view('sales_rep.sales...')
+#3 D:\\SalesRep\\analyzer\
+outes\\web.php(64): view('sales_rep.sales...')
 #4 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(198): Illuminate\\Routing\\Router->{closure}('Chamodya')
 #5 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(172): Illuminate\\Routing\\Route->runCallable()
 #6 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(679): Illuminate\\Routing\\Route->run()
@@ -13326,7 +13329,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #52 D:\\SalesRep\\analyzer\\server.php(21): require_once('D:\\\\SalesRep\\\\ana...')
 #53 {main}
 "} 
-[2018-11-22 17:28:36] local.ERROR: Route [addSale] not defined. (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Route [addSale] not defined. (View: D:\\SalesRep\\analyzer\esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [addSale] not defined. at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
+[2018-11-22 17:28:36] local.ERROR: Route [addSale] not defined. (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Route [addSale] not defined. (View: D:\\SalesRep\\analyzer\
+esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [addSale] not defined. at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
 [stacktrace]
 #0 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\SalesRep\\\\ana...', Array)
@@ -13386,7 +13390,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #55 D:\\SalesRep\\analyzer\\server.php(21): require_once('D:\\\\SalesRep\\\\ana...')
 #56 {main}
 "} 
-[2018-11-22 17:29:11] local.ERROR: Route [/addSale] not defined. (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Route [/addSale] not defined. (View: D:\\SalesRep\\analyzer\esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [/addSale] not defined. at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
+[2018-11-22 17:29:11] local.ERROR: Route [/addSale] not defined. (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Route [/addSale] not defined. (View: D:\\SalesRep\\analyzer\
+esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [/addSale] not defined. at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
 [stacktrace]
 #0 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\SalesRep\\\\ana...', Array)
@@ -13446,7 +13451,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #55 D:\\SalesRep\\analyzer\\server.php(21): require_once('D:\\\\SalesRep\\\\ana...')
 #56 {main}
 "} 
-[2018-11-22 17:29:27] local.ERROR: Route [addSale] not defined. (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Route [addSale] not defined. (View: D:\\SalesRep\\analyzer\esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [addSale] not defined. at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
+[2018-11-22 17:29:27] local.ERROR: Route [addSale] not defined. (View: D:\SalesRep\analyzer\resources\views\sales_rep\salesrep.blade.php) {"userId":2,"email":"chamodyadias218@gmail.com","exception":"[object] (ErrorException(code: 0): Route [addSale] not defined. (View: D:\\SalesRep\\analyzer\
+esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [addSale] not defined. at D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
 [stacktrace]
 #0 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 D:\\SalesRep\\analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('D:\\\\SalesRep\\\\ana...', Array)
@@ -13792,7 +13798,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #50 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #51 {main}
 "} 
-[2018-11-23 12:35:36] local.ERROR: Route [salesrep] not defined. (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\sales_rep\salesrep.blade.php) {"exception":"[object] (ErrorException(code: 0): Route [salesrep] not defined. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\esources\\views\\sales_rep\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [salesrep] not defined. at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
+[2018-11-23 12:35:36] local.ERROR: Route [salesrep] not defined. (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\sales_rep\salesrep.blade.php) {"exception":"[object] (ErrorException(code: 0): Route [salesrep] not defined. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+esources\\views\\sales_rep\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [salesrep] not defined. at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -13851,7 +13858,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #54 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #55 {main}
 "} 
-[2018-11-23 12:36:03] local.ERROR: Route [salesrep] not defined. (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\sales_rep\salesrep.blade.php) {"exception":"[object] (ErrorException(code: 0): Route [salesrep] not defined. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\esources\\views\\sales_rep\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [salesrep] not defined. at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
+[2018-11-23 12:36:03] local.ERROR: Route [salesrep] not defined. (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\sales_rep\salesrep.blade.php) {"exception":"[object] (ErrorException(code: 0): Route [salesrep] not defined. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+esources\\views\\sales_rep\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377, InvalidArgumentException(code: 0): Route [salesrep] not defined. at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\UrlGenerator.php:377)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(InvalidArgumentException), 1)
 #1 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
@@ -13920,7 +13928,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -13961,7 +13970,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14002,7 +14012,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14043,7 +14054,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14084,7 +14096,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14125,7 +14138,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14166,7 +14180,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14207,7 +14222,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14248,7 +14264,8 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #5 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(444): Illuminate\\Routing\\Router->createRoute('POST', '/salesrep/updat...', Array)
 #6 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(153): Illuminate\\Routing\\Router->addRoute('POST', '/salesrep/updat...', 'SalesRepControl...')
 #7 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Support\\Facades\\Facade.php(223): Illuminate\\Routing\\Router->post('/salesrep/updat...', 'SalesRepControl...')
-#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
+#8 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+outes\\web.php(74): Illuminate\\Support\\Facades\\Facade::__callStatic('post', Array)
 #9 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(414): require('C:\\\\xampp\\\\htdocs...')
 #10 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(370): Illuminate\\Routing\\Router->loadRoutes('C:\\\\xampp\\\\htdocs...')
 #11 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\RouteRegistrar.php(121): Illuminate\\Routing\\Router->group(Array, 'C:\\\\xampp\\\\htdocs...')
@@ -14338,7 +14355,10 @@ esources\\views\\sales_rep\\salesrep.blade.php) at D:\\SalesRep\\analyzer\\app\\
 #54 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #55 {main}
 "} 
-[2018-11-23 15:11:13] local.ERROR: View [content] not found. (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\layouts\salesrep.blade.php) (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\layouts\salesrep.blade.php) {"exception":"[object] (ErrorException(code: 0): View [content] not found. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\esources\\views\\layouts\\salesrep.blade.php) (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\esources\\views\\layouts\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137, ErrorException(code: 0): View [content] not found. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\esources\\views\\layouts\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137, InvalidArgumentException(code: 0): View [content] not found. at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
+[2018-11-23 15:11:13] local.ERROR: View [content] not found. (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\layouts\salesrep.blade.php) (View: C:\xampp\htdocs\agency\Business-Sales-Rep-performamce-analyzer\resources\views\layouts\salesrep.blade.php) {"exception":"[object] (ErrorException(code: 0): View [content] not found. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+esources\\views\\layouts\\salesrep.blade.php) (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+esources\\views\\layouts\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137, ErrorException(code: 0): View [content] not found. (View: C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\
+esources\\views\\layouts\\salesrep.blade.php) at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137, InvalidArgumentException(code: 0): View [content] not found. at C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\FileViewFinder.php:137)
 [stacktrace]
 #0 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(45): Illuminate\\View\\Engines\\CompilerEngine->handleViewException(Object(ErrorException), 1)
 #1 C:\\xampp\\htdocs\\agency\\Business-Sales-Rep-performamce-analyzer\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(59): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\xampp\\\\htdocs...', Array)
