@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $name = $user->{'name'};
+        $name = $user->name;
         //DB::table('users')->where('name', 'John')->first();
 
         //echo $user->{'userRoles'};

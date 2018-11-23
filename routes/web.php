@@ -48,24 +48,25 @@ Route::get('/reg', function () {
     return view('auth.register');
 });
 
-Route::get('/salesRep', function () {
-    return view('sales_rep/salesrep');
-});
+Route::get('/salesRep{name}', 'SalesRepController@index');
 
 Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
 });
 
-Route::get('/salesRep{name}', function () {
+/*Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
 });
 
 Route::get('/salesRep{name}', function () {
     return view('sales_rep.salesrep');
-});
-Route::post('/addSale', 'SalesRepController@addSale')->name('addSale');
+});*/
+
+//Route::post('/addSale', 'SalesRepController@addSale')->name('addSale');
 
 Route::get('/stockkeeper{name}', function () {
     return view('stock_keeper.stock_keeper_profile');
 });
 Route::resource('stock', 'stockController');
+
+Route::post('/salesrep/update','SalesRepController@store')->name('stockupdate');
