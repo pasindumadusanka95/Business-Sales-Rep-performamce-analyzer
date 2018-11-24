@@ -15,7 +15,7 @@ class stockController extends Controller
      */
     public function index()
     {
-        return view('stock.stock_keeper_profile');
+        return view('stock_keeper.stock_keeper_profile');
     }
 
     /**

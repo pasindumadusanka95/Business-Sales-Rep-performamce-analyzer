@@ -50,9 +50,11 @@ Route::get('/reg', function () {
 
 Route::get('/salesRep{name}', 'SalesRepController@index');
 
+/*
 Route::get('/stockkeeper', function () {
-    return view('stock_keeper/stock_keeper_profile');
+return view('stock_keeper/stock_keeper_profile');
 });
+ */
 
 Route::get("/salesRep/Profile", 'SalesRepController@profile')->name('srprofile');
 
@@ -70,7 +72,7 @@ return view('sales_rep.salesrep');
 
 Route::post('/salesrep/update', 'SalesRepController@store')->name('stockupdate');
 
-Route::get('/stockKeeper{name}', 'stockController@index');
+Route::get('/stockkeeper', 'stockController@index');
 /*
 Route::resource('stock', 'stockController');
 
