@@ -16,10 +16,10 @@ Route::get('/', function () {
 })->name('welcome');
 /*
 Route::get('/home', function () {
-    return view('home');
+return view('home');
 })->name('home');
 Route::get('/logout', function () {
-    return redirect('/login');
+return redirect('/login');
 });*/
 Auth::routes();
 
@@ -54,29 +54,27 @@ Route::get('/stockkeeper', function () {
     return view('stock_keeper/stock_keeper_profile');
 });
 
-Route::get("/salesRep/Profile",'SalesRepController@profile')->name('srprofile');
+Route::get("/salesRep/Profile", 'SalesRepController@profile')->name('srprofile');
 
-Route::get('/salesRep/Sale','SalesRepController@addSale')->name('srsale');
+Route::get('/salesRep/Sale', 'SalesRepController@addSale')->name('srsale');
 
 /*Route::get('/salesRep{name}', function () {
-    return view('sales_rep.salesrep');
+return view('sales_rep.salesrep');
 });
 
 Route::get('/salesRep{name}', function () {
-    return view('sales_rep.salesrep');
+return view('sales_rep.salesrep');
 });*/
 
 //Route::post('/addSale', 'SalesRepController@addSale')->name('addSale');
 
+Route::post('/salesrep/update', 'SalesRepController@store')->name('stockupdate');
 
-Route::post('/salesrep/update','SalesRepController@store')->name('stockupdate');
-
-Route::get('/stockkeeper{name}', function () {
-    return view('stock.stock_keeper_profile');
-});
+Route::get('/stockKeeper{name}', 'stockController@index');
+/*
 Route::resource('stock', 'stockController');
 
-
 Route::get('/add_stock', function () {
-    return view('stockkeeper/add_stock');
+return view('stockkeeper/add_stock');
 });
+ */
