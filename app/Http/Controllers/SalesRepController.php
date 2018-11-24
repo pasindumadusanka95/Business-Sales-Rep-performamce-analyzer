@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\SalesData;
 use App\User;
+use App\SalesRep;
+use App\stock;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -44,10 +46,18 @@ class SalesRepController extends Controller
      */
     public function store(Request $request)
     {
+        //Auth check
         $user = Auth::user();
         $repid = $user->id;
 
-        
+        //retriev data + update -> stock
+        $stype = $request->stock_type;
+        $stock = stock::where('stockName',$stype)->first();
+
+        // salesrep info
+        $rep = SalesRep::where('id',$repid)->first();
+
+        //sales create
         SalesData::create([
             'shop_name' => $request->shop_name,
             'shop_address' => $request->shop_address,
@@ -60,6 +70,16 @@ class SalesRepController extends Controller
             'repid' => $repid,
             'remarks' => $request->remarks,
         ]);
+        
+        //stock update
+        $stock->stockQuantity = ($stock->stockQuantity)-($request->quantity);
+        $stock->save();
+
+        //update rep info
+        $rep->sales_per_month = ($rep->sales_per_month)+1;
+        $rep->net_sales = ($rep->net_sales) + ($request->total_price);
+        $rep->total_items = ($rep->total_items) + ($request->quantity);
+        $rep->save();
 
         return redirect()->route('srsale');
     }

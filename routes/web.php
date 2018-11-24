@@ -14,13 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-
+/*
 Route::get('/home', function () {
     return view('home');
 })->name('home');
 Route::get('/logout', function () {
-    return redirect('/welcome');
-});
+    return redirect('/login');
+});*/
 Auth::routes();
 
 Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
@@ -68,13 +68,13 @@ Route::get('/salesRep{name}', function () {
 
 //Route::post('/addSale', 'SalesRepController@addSale')->name('addSale');
 
+
+Route::post('/salesrep/update','SalesRepController@store')->name('stockupdate');
+
 Route::get('/stockkeeper{name}', function () {
     return view('stock.stock_keeper_profile');
 });
 Route::resource('stock', 'stockController');
-
-Route::post('/salesrep/update','SalesRepController@store')->name('stockupdate');
-
 
 
 Route::get('/add_stock', function () {

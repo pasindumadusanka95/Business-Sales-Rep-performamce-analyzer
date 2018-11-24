@@ -70,19 +70,11 @@
           <span class="button-bar"></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-header">Dropdown header</a>
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Separated link</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">One more separated link</a>
         </div>
       </div>
       <div class="navbar-translate">
-        <a class="navbar-brand" href="" rel="tooltip" title=""" data-placement="bottom" target="_blank">
-          Now Ui Kit
+        <a class="navbar-brand" href="" rel="tooltip" title="" data-placement="bottom" target="_blank">
+          SALES REP ANALYSER
         </a>
         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-bar top-bar"></span>
@@ -93,32 +85,23 @@
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{{URL::asset('assets/img/blurred-image-1.jpg')}}">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">Back to Kit</a>
+            <a class="nav-link" href="../index.html"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues">Have an issue?</a>
+            <a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-              <i class="fab fa-twitter"></i>
-              <p class="d-lg-none d-xl-none">Twitter</p>
-            </a>
+            <a class="nav-link" rel="tooltip"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
-              <i class="fab fa-facebook-square"></i>
-              <p class="d-lg-none d-xl-none">Facebook</p>
-            </a>
+            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-              <i class="fab fa-instagram"></i>
-              <p class="d-lg-none d-xl-none">Instagram</p>
-            </a>
+            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank"> </a>
           </li>
           <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                   NAME <span class="caret"></span>
+                   {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -140,14 +123,14 @@
   <!-- End Navbar -->
   <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange">
-                <div class="page-header-image" data-parallax="true" style="background-image:url('../assets/img/bg5.jpg');">
+                <div class="page-header-image" data-parallax="true" style="background-image:url('');">
                 </div>
                 <div class="container">
                   <div class="photo-container">
-                    <img src="../assets/img/ryan.jpg" alt="">
+                    <img src="" alt="">
                   </div>
-                  <h3 class="title">Ryan Scheinder</h3>
-                  <p class="category">Photographer</p>
+                  <h3 class="title">{{ Auth::user()->name }}</h3>
+                  <p class="category">Sales Rep</p>
                   <div class="content">
                     <div class="social-description">
                       <h2>26</h2>
@@ -164,14 +147,8 @@
                   </div>
                 </div>
               </div>
-              <<div class="form-group row justify-content-center">
-                  <div class="col-md-6">
-                  <center>
-                    <a class="btn btn-default btn-simple btn-round btn-lg" href = "{{route('srprofile')}}" type="button" >My Profile</a>
-                    &nbsp;&nbsp;
-                    <a class="btn btn-primary btn-simple btn-round btn-lg" href = "{{route('srsale')}}" type="button">Add Sale</a>
-                  </center>
-                  </div>
+              <div class="form-group row justify-content-center">
+                 @yield('heading')
               </div>
               <div class="container text-center">
                 

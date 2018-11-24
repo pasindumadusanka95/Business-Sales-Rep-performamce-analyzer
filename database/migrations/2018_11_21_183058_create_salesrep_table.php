@@ -21,7 +21,10 @@ class CreateSalesrepTable extends Migration
             $table->string('phone');
             $table->string('salary')->nullable();
             $table->string('grade')->nullable();
-            $table->string('sales_per_month')->nullable();
+            $table->integer('sales_per_month')->nullable();
+            $table->integer('net_sales')->nullable();
+            $table->integer('total_items')->nullable();
+            
         });
     }
 
