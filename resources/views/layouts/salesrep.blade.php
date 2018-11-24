@@ -164,8 +164,20 @@
                   </div>
                 </div>
               </div>
+              <<div class="form-group row justify-content-center">
+                  <div class="col-md-6">
+                  <center>
+                    <a class="btn btn-default btn-simple btn-round btn-lg" href = "{{route('srprofile')}}" type="button" >My Profile</a>
+                    &nbsp;&nbsp;
+                    <a class="btn btn-primary btn-simple btn-round btn-lg" href = "{{route('srsale')}}" type="button">Add Sale</a>
+                  </center>
+                  </div>
+              </div>
+              <div class="container text-center">
+                
     @yield('content')
-
+              
+              </div>
     <footer class="footer footer-default">
       <div class="container">
         <nav>

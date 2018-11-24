@@ -15,6 +15,14 @@ class SalesRepController extends Controller
      */
     public function index()
     {
+        return view('sales_rep.repHome');
+    }
+    public function profile()
+    {
+        return view('sales_rep.repProfile');
+    }
+    public function addSale()
+    {
         return view('sales_rep.salesRep');
     }
 
@@ -53,7 +61,7 @@ class SalesRepController extends Controller
             'remarks' => $request->remarks,
         ]);
 
-        return redirect()->route('welcome');
+        return redirect()->route('srsale');
     }
 
     /**
