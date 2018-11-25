@@ -45,6 +45,12 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('suppliers','repcounter','totalsales','totalrevenue','chart'));
     }
+    public function table()
+    {
+        $Sales = SalesData::select('shop_name','shop_address','stock_type','quantity','unit_price','discount','total_price','receiptNo','remarks')->get();
+
+        return view('table', compact('Sales'));
+    }
 
     public function registration()
     {
