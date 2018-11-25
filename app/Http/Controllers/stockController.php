@@ -29,7 +29,10 @@ class stockController extends Controller
 
     public function viewStock()
     {
-        return view('stock_keeper.view_stock');
+        $stock = stocks::all();
+
+
+        return view('stock_keeper.view_stock',compact('stock'));
     }
 
     /**
@@ -50,8 +53,8 @@ class stockController extends Controller
         $request->validate([
             'stock_name' => 'required',
             'stock_qty' => 'required|integer',
-            'buying_price' => 'required|decimal',
-            'selling_price' => 'required|decimal',
+            'buying_price' => 'required|float',
+            'selling_price' => 'required|float',
             'stored_date' => 'required|date',
         ]);
         $stock = new stock([

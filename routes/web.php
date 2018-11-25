@@ -68,7 +68,7 @@ Route::get("/stockKeeper/Profile", 'stockController@profile')->name('skprofile')
 
 Route::get('/stockKeeper/addStock', 'stockController@addStock')->name('stockadd');
 
-Route::get('/stockKeeper/viewStock', 'stockRepController@viewStock')->name('stockview');
+Route::get('/stockKeeper/viewStock', 'stockController@viewStock')->name('stockview');
 
 /*Route::get('/salesRep{name}', function () {
 return view('sales_rep.salesrep');
@@ -81,6 +81,8 @@ return view('sales_rep.salesrep');
 //Route::post('/addSale', 'SalesRepController@addSale')->name('addSale');
 
 Route::post('/salesrep/update', 'SalesRepController@store')->name('stockupdate');
+
+Route::post('/stockKeeper/viewStock', 'stockController@store')->name('stockadd');
 
 Route::get('/stockkeeper', 'stockController@index');
 /*

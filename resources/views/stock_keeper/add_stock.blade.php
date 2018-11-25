@@ -22,7 +22,7 @@
             </div>
             <div class="container">
 
-                <form method="POST" action="{{ route('stock_keeper.store') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('stockadd') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
 
@@ -56,7 +56,7 @@
 
                         <div class="form-group row justify-content-center">
                             <div class="col-md-3">
-                                <label class="bmd-label-floating">Unit Price</label>
+                                <label class="bmd-label-floating">Stored Date</label>
                                 <input type="date" class="form-control {{ $errors->has('stored_date') ? ' is-invalid' : '' }}" id="stored_date" name="stored_date" placeholder="" required>
                             </div>
                         </div>
