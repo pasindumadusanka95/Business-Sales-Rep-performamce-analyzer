@@ -1,4 +1,3 @@
-
 <?php
 
 namespace App\Http\Controllers;
@@ -87,7 +86,26 @@ class stockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'stock_name'=>'required',
+            'stock_qty'=> 'required|integer',
+            'buying_price' => 'required|integer',
+            'selling_price' => 'required|integer',
+            'stored_date' => 'required|integer'
+        ]);
+
+
+        $stock = stock::find($id);
+        $stock->stock_name = $request->get('stock_name');
+        $stock->stock_qty = $request->get('stock_qty');
+        $stock->buying_price = $request->get('buying_price');
+        $stock->selling_price = $request->get('selling_price');
+        $stock->stored_date = $request->get('stored_date');
+        $stock->save();
+
+
+
+        return redirect('/stock_keeper')->with('success', 'Stock has been updated');
     }
 
     /**
