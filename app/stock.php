@@ -6,11 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class stock extends Model
 {
+
+    protected $table = 'stocks';
+    public $timestamps = false;
+
     protected $fillable = [
-        'stockName',
-        'stockQuantity',
-        'buyingPrice',
-        'sellingPrice',
-        'storedDate'
+        'id',
+        'stock_name',
+        'stock_qty',
+        'buying_price',
+        'selling_price',
+        'stored_date'
     ];
 }

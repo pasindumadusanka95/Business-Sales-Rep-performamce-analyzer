@@ -50,6 +50,8 @@ Route::get('/reg', function () {
 
 Route::get('/salesRep{name}', 'SalesRepController@index');
 
+Route::get('/stock_keeper{name}', 'stockController@index');
+
 /*
 Route::get('/stockkeeper', function () {
 return view('stock_keeper/stock_keeper_profile');
@@ -59,6 +61,12 @@ return view('stock_keeper/stock_keeper_profile');
 Route::get("/salesRep/Profile", 'SalesRepController@profile')->name('srprofile');
 
 Route::get('/salesRep/Sale', 'SalesRepController@addSale')->name('srsale');
+
+Route::get("/stock_keeper/Profile", 'stockController@profile')->name('skprofile');
+
+Route::get('/stock_keeper/add_stock', 'stockController@add_stock')->name('stockadd');
+
+Route::get('/stock_keeper/view_stock', 'stockRepController@view_stock')->name('stockview');
 
 /*Route::get('/salesRep{name}', function () {
 return view('sales_rep.salesrep');
