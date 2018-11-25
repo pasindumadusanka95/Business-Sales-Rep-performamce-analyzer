@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
 return view('home');
 })->name('home');
+
+/*
 Route::get('/logout', function () {
 return redirect('/login');
 });*/
@@ -62,11 +64,11 @@ Route::get("/salesRep/Profile", 'SalesRepController@profile')->name('srprofile')
 
 Route::get('/salesRep/Sale', 'SalesRepController@addSale')->name('srsale');
 
-Route::get("/stock_keeper/Profile", 'stockController@profile')->name('skprofile');
+Route::get("/stockKeeper/Profile", 'stockController@profile')->name('skprofile');
 
-Route::get('/stock_keeper/add_stock', 'stockController@add_stock')->name('stockadd');
+Route::get('/stockKeeper/addStock', 'stockController@addStock')->name('stockadd');
 
-Route::get('/stock_keeper/view_stock', 'stockRepController@view_stock')->name('stockview');
+Route::get('/stockKeeper/viewStock', 'stockRepController@viewStock')->name('stockview');
 
 /*Route::get('/salesRep{name}', function () {
 return view('sales_rep.salesrep');
