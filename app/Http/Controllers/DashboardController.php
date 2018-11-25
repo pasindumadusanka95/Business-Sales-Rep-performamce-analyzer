@@ -10,6 +10,11 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use Charts;
+use DB;
+use Carbon\Carbon;
+
+
 
 class DashboardController extends Controller
 {
@@ -22,7 +27,23 @@ class DashboardController extends Controller
         $totalrevenue=SalesData::sum('total_price');
 
 
-        return view('dashboard', compact('suppliers','repcounter','totalsales','totalrevenue'));
+        /*$chartdata = SalesData::select(DB::raw('count('*') as `count`'), DB::raw('MONTH(dateOfSale) month'))
+            ->groupBy(function($m) {
+                return Carbon::parse($m->dateOfSale)->format('m');
+            })->get();*/
+
+        $chartdata = SalesData::selectRaw('COUNT(*) as count, YEAR(dateOfSale) year, MONTH(dateOfSale) month')
+            ->groupBy('year', 'month')
+            ->get();
+      /* $chartdata=SalesData::where(DB::raw("(DATE_FORMAT(dateOfSale,'%M'))"),date('M'))->get();*/
+        $chart=Charts::database($chartdata,'bar','highcharts')
+            ->title("Sales Details")
+            ->elementLabel("Total Sales")
+            ->dimensions(1000,500)
+            ->responsive(false);
+
+
+        return view('dashboard', compact('suppliers','repcounter','totalsales','totalrevenue','chart'));
     }
 
     public function registration()
