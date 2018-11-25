@@ -1,185 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8">
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Stock keeper View</title>
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no" name="viewport">
-    <base href="https://demos.creative-tim.com/now-ui-kit-angular/">
-    <!-- Canonical SEO -->
-    <link rel="canonical" href="https://www.creative-tim.com/product/now-ui-kit-angular">
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Business Analyser
+    </title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200|Open+Sans+Condensed:700" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js">
-    </script>
-    <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NKDMSK6"></script>
-    <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
-    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','_gaq');
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <!-- CSS Files -->
+    <link href="{{URL::asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link href="{{URL::asset('assets/css/now-ui-kit.css?v=1.2.0')}}" rel="stylesheet" />
+    <link href="{{URL::to('/')}}/css/bootstrap-datepicker.css" rel="stylesheet">
 
-        _gaq('create', 'UA-46172202-1', 'auto');
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 
-
-        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-            n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-            document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-        fbq('init', '111649226022273');</script><!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NKDMSK6');</script><!-- End Google Tag Manager -->
-    <link href="styles.7df5ac5d94657a0eb375.bundle.css" rel="stylesheet">
-    <style></style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <style>
+        .bmd-form-group-long{
+            width: 653px;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .bmd-form-group-short{
+            padding: 10px;
+            margin: 10px,10px,10px,10px;
+            width: 323px;
+            position: relative;
+            display: inline-block;
+        }
+        .bmd-form-group-date{
+            padding: 10px;
+            margin: 10px,10px,10px,10px;
+            width: 200px;
+            position: relative;
+            display: inline-block;
+            float: right;
+        }
+        .row-sales{
+            height: auto;
+        }
+        .col-sales{
+            width: auto;
+            padding: 10px;
+        }
+        .pull-right-sales{
+            padding: 15px;
+            margin: 20px;
+            width: 100px;
+            height: auto;
+            float: right;
+            text-align: center;
+        }
+    </style>
 </head>
 
-<body class="sidebar-collapse profile-page">
-<!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6"
-                                                        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
-<app-root _nghost-c0="" ng-version="5.2.2">
-    <app-navbar _ngcontent-c0="" _nghost-c1="">
-        <nav _ngcontent-c1="" class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent"
-             color-on-scroll="500">
-            <div _ngcontent-c1="" class="container">
-                <div _ngcontent-c1="" class="dropdown button-dropdown">
-                    <div _ngcontent-c1="" ngbdropdown="" class="dropdown">
-                        <a _ngcontent-c1="" aria-haspopup="true" class="dropdown-toggle dropdown-toggle"
-                           ngbdropdowntoggle="" aria-expanded="false">
-                            <span _ngcontent-c1="" class="button-bar"></span>
-                            <span _ngcontent-c1="" class="button-bar"></span>
-                            <span _ngcontent-c1="" class="button-bar"></span>
-                        </a>
-                        <div _ngcontent-c1="" ngbdropdownmenu="" class="dropdown-menu">
-                            <a _ngcontent-c1="" class="dropdown-header">Dropdown header</a>
-                            <a _ngcontent-c1="" class="dropdown-item" href="#">Action</a>
-                            <a _ngcontent-c1="" class="dropdown-item" href="#">Another action</a>
-                            <a _ngcontent-c1="" class="dropdown-item" href="#">Something else here</a>
-                            <div _ngcontent-c1="" class="dropdown-divider"></div>
-                            <a _ngcontent-c1="" class="dropdown-item" href="#">Separated link</a>
-                            <div _ngcontent-c1="" class="dropdown-divider"></div>
-                            <a _ngcontent-c1="" class="dropdown-item" href="#">One more separated link</a>
-                        </div>
-                    </div>
-                </div>
-                <div _ngcontent-c1="" class="collapse navbar-collapse" data-color="orange" data-nav-image="assets/img/blurred-image-1.jpg">
-                    <ul _ngcontent-c1="" class="navbar-nav ml-auto">
-                        <li _ngcontent-c1="" class="nav-item">
-                            <a _ngcontent-c1="" class="nav-link" href="https://www.creative-tim.com/product/now-ui-kit-angular"
-                               target="_blank">
-                                <p _ngcontent-c1="">My Performance</p>
-                            </a>
-                        </li>
-                        <li _ngcontent-c1="" class="nav-item">
-                            <a _ngcontent-c1="" class="nav-link" href="/now-ui-kit-angular/documentation">
-                                <p _ngcontent-c1="">My Sales</p>
-                            </a>
-                        </li>
-                        <li _ngcontent-c1="" class="nav-item">
-                            <a href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                              document.getElementById('logout-form').submit();">
-                                <button type="button" class="btn btn-neutral">Sign Out</button>
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+<body class="profile-page sidebar-collapse">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    <div class="container">
+        <div class="dropdown button-dropdown">
+            <a href="#pablo" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+                <span class="button-bar"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             </div>
-        </nav>
-    </app-navbar>
-    <app-profile _nghost-c2="">
-        <div _ngcontent-c2="" class="wrapper">
-            <div _ngcontent-c2="" class="page-header page-header-small" filter-color="orange">
-                <div _ngcontent-c2="" class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url({{'assets/img/bg.jpg'}}); transform: translate3d(0px, 0px, 0px);">
-                </div>
-                <div _ngcontent-c2="" class="container">
-                    <div _ngcontent-c2="" class="content-center">
-                        <div _ngcontent-c2="" class="photo-container">
-                            <img _ngcontent-c2="" alt="" src="assets/img/ryan.jpg">
-                        </div>
-                        <h3 _ngcontent-c2="" class="title">Ryan Scheinder</h3>
-                        <p _ngcontent-c2="" class="category">Stock Keeper</p>
-
-                    </div>
-                </div>
-            </div>
-            <div _ngcontent-c2="" class="section">
-                <div _ngcontent-c2="" class="container">
-                    <h3 _ngcontent-c2="" class="title">About me</h3>
-                    <h5 _ngcontent-c2="" class="description">An artist of considerable range, Ryan — the name taken
-                        by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his
-                        own music, giving it a warm, intimate feel with a solid groove structure. An artist of
-                        considerable range.</h5>
-                    <div _ngcontent-c2="" class="row">
-                        <div _ngcontent-c2="" class="col-md-12">
-                            <h4 _ngcontent-c2="" class="title text-center">My Performance</h4>
-                            <ngb-tabset _ngcontent-c2="" class="nav nav-pills nav-pills-primary  nav-pills-just-icons justify-content-center tab-space"
-                                        type="pills">
-                                <ul role="tablist" class="nav nav-pills justify-content-center">
-                                    <!---->
-                                    <li class="nav-item">
-                                        <a class="nav-link active" href="" role="tab" id="ngb-tab-0" aria-controls="ngb-tab-0-panel"
-                                           aria-expanded="true" aria-disabled="false">
-                                            <!---->
-                                            <i _ngcontent-c2="" class="now-ui-icons design_image"></i>
-
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="tab" id="ngb-tab-1" aria-expanded="false"
-                                           aria-disabled="false">
-                                            <!---->
-                                            <i _ngcontent-c2="" class="now-ui-icons location_world"></i>
-
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="" role="tab" id="ngb-tab-2" aria-expanded="false"
-                                           aria-disabled="false">
-                                            <!---->
-                                            <i _ngcontent-c2="" class="now-ui-icons sport_user-run"></i>
-
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <!---->
-                                    <!---->
-                                    <div role="tabpanel" class="tab-pane active" aria-labelledby="ngb-tab-0" id="ngb-tab-0-panel"
-                                         aria-expanded="true">
-                                        <!---->
-
-                                    </div>
-
-                                    <!---->
-
-                                    <!---->
-
-                                </div>
-                            </ngb-tabset>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer _ngcontent-c2="" class="footer footer-default">
-                <div _ngcontent-c2="" class="container">
-
-                    <div _ngcontent-c2="" class="copyright">
-                        ©
-                        2018
-
-                    </div>
-                </div>
-            </footer>
         </div>
-    </app-profile>
+        <div class="navbar-translate">
+            <a class="navbar-brand" href="" rel="tooltip" title="" data-placement="bottom" target="_blank">
+                SALES REP ANALYSER
+            </a>
+            <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-bar top-bar"></span>
+                <span class="navbar-toggler-bar middle-bar"></span>
+                <span class="navbar-toggler-bar bottom-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{{URL::asset('assets/img/blurred-image-1.jpg')}}">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank"> </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+<div class="wrapper">
+    <div class="page-header clear-filter" filter-color="orange">
+        <div class="page-header-image" data-parallax="true" style="background-image:url('');">
+        </div>
+        <div class="container">
+            <div class="photo-container">
+                <img src="" alt="">
+            </div>
+            <h3 class="title">{{ Auth::user()->name }}</h3>
+            <p class="category">Sales Rep</p>
+            <div class="content">
+                <div class="social-description">
+                    <h2>26</h2>
+                    <p>Comments</p>
+                </div>
+                <div class="social-description">
+                    <h2>26</h2>
+                    <p>Comments</p>
+                </div>
+                <div class="social-description">
+                    <h2>48</h2>
+                    <p>Bookmarks</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group row justify-content-center">
+        @yield('heading')
+    </div>
+    <div class="container text-center">
+
+        @yield('content')
+
+    </div>
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://presentation.creative-tim.com">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright" id="copyright">
+                &copy;
+                <script>
+                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+                </script>, Designed by
+                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+</div>
+<!--   Core JS Files   -->
+<script src="{{URL::asset('assets/js/core/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('assets/js/core/popper.min.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="{{URL::asset('assets/js/plugins/bootstrap-switch.js')}}"></script>
+<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="{{URL::asset('assets/js/plugins/nouislider.min.js')}}" type="text/javascript"></script>
+<!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
+<script src="{{URL::asset('assets/js/plugins/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+<!--  Google Maps Plugin    -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
+<script src="{{URL::asset('assets/js/now-ui-kit.js?v=1.2.0" type="text/javascript')}}"></script>
+<script>
+    function setView(ac, inac, id1, id2) {
+
+        var act = document.getElementById(ac)
+        act.classList.add("active");
+        var inact = document.getElementById(inac)
+        inact.classList.remove("active");
+        var x = document.getElementById(id1)
+        x.style.visibility = 'visible';
+        var y = document.getElementById(id2)
+        y.style.visibility = 'hidden';
+
+    }
+</script>
+</body>
+
+</html>

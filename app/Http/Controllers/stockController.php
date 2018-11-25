@@ -25,7 +25,7 @@ class stockController extends Controller
      */
     public function create()
     {
-        return view('stock.add_stock');
+        return view('stock_keeper.add_stock');
     }
 
     /**
@@ -52,7 +52,7 @@ class stockController extends Controller
 
         ]);
         $stock->save();
-        return redirect('/stock')->with('success', 'Stock has been added');
+        return redirect('/stock_keeper')->with('success', 'Stock has been added');
     }
 
     /**
