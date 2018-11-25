@@ -71,5 +71,5 @@ Route::get('/stockkeeper{name}', function () {
 Route::resource('stock', 'stockController');
 
 Route::get('/add_stock', function () {
-    return view('stockkeeper/add_stock');
+    return view('stock_keeper.add_stock');
 });

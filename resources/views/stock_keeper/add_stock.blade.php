@@ -20,7 +20,7 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('shares.store') }}">
+            <form method="post" action="{{ route('stock_keeper.store') }}">
                 <div class="form-group">
                     @csrf
                     <label for="name">Stock Name:</label>
