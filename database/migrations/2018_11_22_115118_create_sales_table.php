@@ -15,8 +15,6 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->date('dateOfSale');
             $table->string('shop_name');
             $table->string('shop_address');
             $table->string('stock_type');
@@ -25,7 +23,9 @@ class CreateSalesTable extends Migration
             $table->integer('discount');
             $table->integer('total_price');
             $table->integer('receiptNo');
+            $table->integer('repid');
             $table->string('remarks')->nullable();
+            $table->timestamps();
 
         });
     }

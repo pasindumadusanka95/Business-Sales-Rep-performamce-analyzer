@@ -10,7 +10,7 @@ class SalesRep extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id','name', 'email', 'address', 'phone', 'salary', 'grade', 'sales_per_month',
+        'id','name', 'email', 'address', 'phone', 'salary', 'grade', 'sales_per_month','net_sales','total_items',
     ];
 
     //$pro=App\SupplierData::all();

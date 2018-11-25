@@ -82,7 +82,8 @@ class RegisterController extends Controller
             SalesRep::create([
 
                 'name' => $data['name'],
-                'email' => $data['address'],
+                'email'  => $data['email'],
+                'address' => $data['address'],
                 'phone' => $data['phone'],
             ]);
         }

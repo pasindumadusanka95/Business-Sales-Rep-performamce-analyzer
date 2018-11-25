@@ -65,7 +65,7 @@ class DashboardController extends Controller
                //create details in the sales rep table too
                if($roles=="1"){
                 SalesRep::create([
-                   'id' => $user->id,
+                    'id' => $user->id,
                     'name' => $request->name,
                     'email' => $request->email,
                     'address' => $request->name,
