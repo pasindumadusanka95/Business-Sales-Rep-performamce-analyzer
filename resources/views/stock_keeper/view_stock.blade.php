@@ -25,17 +25,17 @@
             </tr>
             </thead>
             <tbody>
-            @foreach($stocks as $stock)
+            @foreach($stock as $stocks)
                 <tr>
-                    <td>{{$stock->id}}</td>
-                    <td>{{$stock->stock_name}}</td>
-                    <td>{{$stock->stock_qty}}</td>
-                    <td>{{$stock->buying_price}}</td>
-                    <td>{{$stock->selling_price}}</td>
-                    <td>{{$stock->stored_date}}</td>
-                    <td><a href="{{ route('stock.edit',$stock->id)}}" class="btn btn-primary">Edit</a></td>
+                    <td>{{$stocks->id}}</td>
+                    <td>{{$stocks->stock_name}}</td>
+                    <td>{{$stocks->stock_qty}}</td>
+                    <td>{{$stocks->buying_price}}</td>
+                    <td>{{$stocks->selling_price}}</td>
+                    <td>{{$stocks->stored_date}}</td>
+                    <td><a href="{{ route('stocks.edit',$stocks->id)}}" class="btn btn-primary">Edit</a></td>
                     <td>
-                        <form action="{{ route('stock.destroy', $stock->id)}}" method="post">
+                        <form action="{{ route('stocks.destroy', $stocks->id)}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>

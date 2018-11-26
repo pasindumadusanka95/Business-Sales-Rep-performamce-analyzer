@@ -49,6 +49,15 @@ return array(
     'Carbon\\Exceptions\\InvalidDateException' => $vendorDir . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
     'Carbon\\Laravel\\ServiceProvider' => $vendorDir . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
     'Carbon\\Translator' => $vendorDir . '/nesbot/carbon/src/Carbon/Translator.php',
+
+    'Collective\\Html\\Componentable' => $vendorDir . '/laravelcollective/html/src/Componentable.php',
+    'Collective\\Html\\Eloquent\\FormAccessible' => $vendorDir . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+    'Collective\\Html\\FormBuilder' => $vendorDir . '/laravelcollective/html/src/FormBuilder.php',
+    'Collective\\Html\\FormFacade' => $vendorDir . '/laravelcollective/html/src/FormFacade.php',
+    'Collective\\Html\\HtmlBuilder' => $vendorDir . '/laravelcollective/html/src/HtmlBuilder.php',
+    'Collective\\Html\\HtmlFacade' => $vendorDir . '/laravelcollective/html/src/HtmlFacade.php',
+    'Collective\\Html\\HtmlServiceProvider' => $vendorDir . '/laravelcollective/html/src/HtmlServiceProvider.php',
+
     'ConsoleTVs\\Charts\\Builder' => $vendorDir . '/consoletvs/charts/src/Builder.php',
     'ConsoleTVs\\Charts\\Builder\\Chart' => $vendorDir . '/consoletvs/charts/src/Builder/Chart.php',
     'ConsoleTVs\\Charts\\Builder\\Database' => $vendorDir . '/consoletvs/charts/src/Builder/Database.php',
@@ -69,6 +78,7 @@ return array(
     'ConsoleTVs\\Support\\Traits\\StringFUnctions' => $vendorDir . '/consoletvs/support/Traits/StringFunctions.php',
     'ConsoleTVs\\Support\\Traits\\Utilities' => $vendorDir . '/consoletvs/support/Traits/Utilities.php',
     'ConsoleTVs\\Support\\Traits\\WorldFunctions' => $vendorDir . '/consoletvs/support/Traits/WorldFunctions.php',
+
     'Cron\\AbstractField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
     'Cron\\CronExpression' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
     'Cron\\DayOfMonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
+class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -19,6 +19,7 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '0d8253363903f0ac7b0978dcde4e28a0' => __DIR__ . '/..' . '/beyondcode/laravel-dump-server/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '8fde5feda9697fe0ee53a3938c839fb0' => __DIR__ . '/../..' . '/app/Helpers/Helper.php',
     );
 
@@ -127,8 +128,12 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
         'C' => 
         array (
             'Cron\\' => 5,
+
+            'Collective\\Html\\' => 16,
+
             'ConsoleTVs\\Support\\' => 19,
             'ConsoleTVs\\Charts\\' => 18,
+
         ),
         'B' => 
         array (
@@ -335,6 +340,11 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
+
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
+
         'ConsoleTVs\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/consoletvs/support',
@@ -342,6 +352,7 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
         'ConsoleTVs\\Charts\\' => 
         array (
             0 => __DIR__ . '/..' . '/consoletvs/charts/src',
+
         ),
         'BeyondCode\\DumpServer\\' => 
         array (
@@ -429,6 +440,15 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
+
         'ConsoleTVs\\Charts\\Builder' => __DIR__ . '/..' . '/consoletvs/charts/src/Builder.php',
         'ConsoleTVs\\Charts\\Builder\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Builder/Chart.php',
         'ConsoleTVs\\Charts\\Builder\\Database' => __DIR__ . '/..' . '/consoletvs/charts/src/Builder/Database.php',
@@ -449,6 +469,7 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
         'ConsoleTVs\\Support\\Traits\\StringFUnctions' => __DIR__ . '/..' . '/consoletvs/support/Traits/StringFunctions.php',
         'ConsoleTVs\\Support\\Traits\\Utilities' => __DIR__ . '/..' . '/consoletvs/support/Traits/Utilities.php',
         'ConsoleTVs\\Support\\Traits\\WorldFunctions' => __DIR__ . '/..' . '/consoletvs/support/Traits/WorldFunctions.php',
+
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',
@@ -4024,11 +4045,11 @@ class ComposerStaticInit21d5b93ebe80a18c80d155b63117518f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit21d5b93ebe80a18c80d155b63117518f::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit21d5b93ebe80a18c80d155b63117518f::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInit21d5b93ebe80a18c80d155b63117518f::$fallbackDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit21d5b93ebe80a18c80d155b63117518f::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit21d5b93ebe80a18c80d155b63117518f::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df::$fallbackDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df::$classMap;
 
         }, null, ClassLoader::class);
     }

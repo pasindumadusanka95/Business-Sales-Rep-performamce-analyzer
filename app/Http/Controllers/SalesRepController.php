@@ -18,17 +18,36 @@ class SalesRepController extends Controller
      */
     public function index()
     {
-        return view('sales_rep.repHome');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id', $id)->first();
+        //include $user & $srep -> view repHome
+        return view('sales_rep.repHome', compact('user', 'srep'));
     }
     public function profile()
     {
 
         $totalsales = SalesData::count();
-        return view('sales_rep.repProfile', compact('totalsales'));
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id', $id)->first();
+        //include $user & $srep -> view repProfile
+        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales'));
     }
     public function addSale()
     {
-        return view('sales_rep.salesRep');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id', $id)->first();
+        $prod = stock::all();
+        //include $user & $srep -> view salesrep
+        return view('sales_rep.salesRep', compact('user', 'srep', 'prod'));
+    }
+
+    public function findQty(Request $request)
+    {
+        $qty = stock::select('stockQuantity')->where('stockName', $request->id)->first();
+        return response()->json($qty);
     }
 
     /**
@@ -54,7 +73,7 @@ class SalesRepController extends Controller
         $repid = $user->id;
 
         //retriev data + update -> stock
-        $stype = $request->stock_type;
+        $stype = $request->prod_id;
         $stock = stock::where('stockName', $stype)->first();
 
         // salesrep info
@@ -64,7 +83,7 @@ class SalesRepController extends Controller
         SalesData::create([
             'shop_name' => $request->shop_name,
             'shop_address' => $request->shop_address,
-            'stock_type' => $request->stock_type,
+            'stock_type' => $request->prod_id,
             'quantity' => $request->quantity,
             'unit_price' => $request->unit_price,
             'discount' => $request->discount,

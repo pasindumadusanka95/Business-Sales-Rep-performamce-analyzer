@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\SalesData;
 use App\SalesRep;
+use App\stock;
 use App\SupplierData;
 use App\User;
 use Charts;
@@ -42,9 +43,10 @@ class DashboardController extends Controller
     }
     public function table()
     {
-        $Sales = SalesData::select('shop_name', 'shop_address', 'stock_type', 'quantity', 'unit_price', 'discount', 'total_price', 'receiptNo', 'remarks')->get();
-
-        return view('table', compact('Sales'));
+        $Sales = SalesData::select('shop_name','shop_address','stock_type','quantity','unit_price','discount','total_price','receiptNo','remarks')->get();
+        $SalesRepD= SalesRep::select('name','email','address','phone','salary','grade','sales_per_month')->get();
+        $Stocks= stock::all();
+        return view('table', compact('Sales','SalesRepD','Stocks'));
     }
 
     public function registration()
