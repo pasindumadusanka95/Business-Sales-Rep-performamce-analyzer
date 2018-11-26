@@ -128,12 +128,9 @@ class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
         'C' => 
         array (
             'Cron\\' => 5,
-
-            'Collective\\Html\\' => 16,
-
             'ConsoleTVs\\Support\\' => 19,
             'ConsoleTVs\\Charts\\' => 18,
-
+            'Collective\\Html\\' => 16,
         ),
         'B' => 
         array (
@@ -340,11 +337,6 @@ class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
         ),
-
-        'Collective\\Html\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
-
         'ConsoleTVs\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/consoletvs/support',
@@ -352,7 +344,10 @@ class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
         'ConsoleTVs\\Charts\\' => 
         array (
             0 => __DIR__ . '/..' . '/consoletvs/charts/src',
-
+        ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
         ),
         'BeyondCode\\DumpServer\\' => 
         array (
@@ -440,7 +435,6 @@ class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
         'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
-
         'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
         'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
         'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
@@ -448,7 +442,6 @@ class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
         'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
         'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
         'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
-
         'ConsoleTVs\\Charts\\Builder' => __DIR__ . '/..' . '/consoletvs/charts/src/Builder.php',
         'ConsoleTVs\\Charts\\Builder\\Chart' => __DIR__ . '/..' . '/consoletvs/charts/src/Builder/Chart.php',
         'ConsoleTVs\\Charts\\Builder\\Database' => __DIR__ . '/..' . '/consoletvs/charts/src/Builder/Database.php',
@@ -469,7 +462,6 @@ class ComposerStaticInit7cf7aa10f331b0eeae352b7ba23f06df
         'ConsoleTVs\\Support\\Traits\\StringFUnctions' => __DIR__ . '/..' . '/consoletvs/support/Traits/StringFunctions.php',
         'ConsoleTVs\\Support\\Traits\\Utilities' => __DIR__ . '/..' . '/consoletvs/support/Traits/Utilities.php',
         'ConsoleTVs\\Support\\Traits\\WorldFunctions' => __DIR__ . '/..' . '/consoletvs/support/Traits/WorldFunctions.php',
-
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
         'Cron\\DayOfMonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/DayOfMonthField.php',

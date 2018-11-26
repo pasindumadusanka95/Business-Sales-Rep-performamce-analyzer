@@ -39,7 +39,7 @@ class SalesRepController extends Controller
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
-        $prod = stock::all();
+        $prod = stock::select('stockName')->groupBy('stockName')->get();
         //include $user & $srep -> view salesrep
         return view('sales_rep.salesRep', compact('user', 'srep', 'prod'));
     }
@@ -48,6 +48,14 @@ class SalesRepController extends Controller
     {
         $qty = stock::select('stockQuantity')->where('stockName', $request->id)->first();
         return response()->json($qty);
+    }
+
+    //used in salesRep.blade.php to get the availability of the particular stock type
+    public function checkAvailability(Request $request)
+    {
+        //console . log("camwe here");
+        $data = stock::select('stockQuantity', 'sellingPrice')->where('stockName', $request->prod_name)->first();
+        return response()->json($data);
     }
 
     /**
