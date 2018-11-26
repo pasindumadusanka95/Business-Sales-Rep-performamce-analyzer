@@ -9,8 +9,19 @@
     </center>
     </div>
 @endsection
+<style>
+    .bmd-form-group-date{
+        padding: 10px;
+        margin: 10px,10px,10px,10px;
+        width: 150px;
+        width: 200px;
+        position: relative;
+        float: right;
+    }
+</style>
 
 @section('content')
+
 
       <div class="section">
         <div class = "card">  
@@ -23,6 +34,18 @@
                 <form method="POST" action="{{ route('stockupdate') }}" enctype="multipart/form-data">
                     @csrf
                   <div class="card-body">
+
+                        <div class="form-group row justify-content-center">
+                                <div class="form-group bmd-form-group-date">
+                                    <label class="bmd-label-floating">Date of Sale</label>
+                              <input class="date form-control {{ $errors->has('dateOfSale') ? ' is-invalid' : '' }}" type="text" id="dateOfSale" name="dateOfSale" placeholder="Eg: MM-DD-YYYY" required>
+                                </div>
+                    
+                        </div>
+                             
+                             <br>
+     
+                             
                     
                       <div class="form-group row justify-content-center">
                           <div class="col-md-6">
@@ -88,7 +111,7 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
                 
                 </form>
-                <div>
+                
   
         </div>
       </div>

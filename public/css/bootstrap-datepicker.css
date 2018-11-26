@@ -13,6 +13,8 @@
   direction: ltr;
   bottom: 550px;
   right: 100px;
+  display: inline;
+  position: relative;
 
 }
 .datepicker-inline {
