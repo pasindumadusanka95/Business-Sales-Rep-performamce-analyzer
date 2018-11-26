@@ -80,3 +80,5 @@ Route::resource('stock', 'stockController');
 Route::get('/add_stock', function () {
     return view('stockkeeper/add_stock');
 });
+
+Route::get('/findQty','SalesRepController@findQty');

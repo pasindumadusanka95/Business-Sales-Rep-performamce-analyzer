@@ -17,15 +17,33 @@ class SalesRepController extends Controller
      */
     public function index()
     {
-        return view('sales_rep.repHome');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id',$id)->first();
+        //include $user & $srep -> view repHome
+        return view('sales_rep.repHome',compact('user','srep'));
     }
     public function profile()
     {
-        return view('sales_rep.repProfile');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id',$id)->first();
+        //include $user & $srep -> view repProfile
+        return view('sales_rep.repProfile',compact('user','srep'));
     }
     public function addSale()
     {
-        return view('sales_rep.salesRep');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id',$id)->first();
+        $prod = stock::all();
+        //include $user & $srep -> view salesrep
+        return view('sales_rep.salesRep',compact('user','srep','prod'));
+    }
+
+    public function findQty(Request $request){
+        $qty  = stock::select('stockQuantity')->where('id',$request->id)->first();
+        return response()->json($qty);
     }
 
     /**
