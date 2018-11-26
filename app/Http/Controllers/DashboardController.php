@@ -27,28 +27,39 @@ class DashboardController extends Controller
         ->groupBy(function($m) {
         return Carbon::parse($m->dateOfSale)->format('m');
         })->get();*/
-        if (SalesData::all() != null) {
+       /* if (SalesData::all() != null) {
             $chartdata = SalesData::selectRaw('COUNT(*) as count, YEAR(updated_at) year, MONTH(updated_at) month')
                 ->groupBy('year', 'month')
                 ->get();
-        }
+        }*/
         /* $chartdata=SalesData::where(DB::raw("(DATE_FORMAT(dateOfSale,'%M'))"),date('M'))->get();*/
-        $chart = Charts::database($chartdata, 'bar', 'highcharts')
+        /*$chart = Charts::database($chartdata, 'bar', 'highcharts')
             ->title("Sales Details")
             ->elementLabel("Total Sales")
             ->dimensions(1000, 500)
-            ->responsive(false);
+            ->responsive(false);*/
 
-        return view('dashboard', compact('suppliers', 'repcounter', 'totalsales', 'totalrevenue', 'chart'));
+       /* $result = SalesData::selectRaw('COUNT(*) as count, MONTH(updated_at) month')
+            ->groupBy('month')
+            ->get();*/
+        return view('dashboard', compact('suppliers', 'repcounter', 'totalsales', 'totalrevenue'));
     }
     public function table()
     {
         $Sales = SalesData::select('shop_name','shop_address','stock_type','quantity','unit_price','discount','total_price','receiptNo','remarks')->get();
         $SalesRepD= SalesRep::select('name','email','address','phone','salary','grade','sales_per_month')->get();
         $Stocks= stock::all();
+
+
         return view('table', compact('Sales','SalesRepD','Stocks'));
     }
-
+     public function chart()
+       {
+           $result = SalesData::selectRaw('COUNT(*) as count, MONTH(updated_at) month')
+               ->groupBy('month')
+               ->get();
+           return response()->json($result);
+       }
     public function registration()
     {
         return view('registration');

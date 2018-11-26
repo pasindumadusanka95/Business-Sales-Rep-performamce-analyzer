@@ -18,10 +18,24 @@
         position: relative;
         float: right;
     }
+    .productname{
+        padding: 10px;
+        font-size: 10pt;
+        border-radius: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+        
+    }
+    .bt_check_available{
+        padding: 10px;
+        font-size: 10pt;
+        border-radius: 30px;
+        background-color: rgb(249, 99, 50); 
+        border: 0px;
+    }
 </style>
 
 @section('content')
-
 
       <div class="section">
         <div class = "card">  
@@ -70,20 +84,23 @@
                                           <option value="{{$item->stockName}}">{{$item->stockName}}</option>
                                       @endforeach
                               </select>
+                            <button type="button" class="bt_check_available" onclick="checkAvailability()">Check Availability</button>
+
                           </div>
+                          
                       </div>
 
                       <div class="form-group row justify-content-center">
                           <div class="col-md-3">
                               <label class="bmd-label-floating">Available Quantity</label>
-                              <input type="text" class="form-control" id="disp_quantity" name="disp_quantity" required>
+                          <input type="text" class="form-control" disabled id="disp_quantity" name="disp_quantity"  required>
                           </div>
                       
 
                       
                             <div class="col-md-3">
                               <label class="bmd-label-floating">Price</label>
-                              <input type="text" class="form-control" id="disp_price" name="disp_price" required>
+                              <input type="text" class="form-control" disabled id="disp_price" name="disp_price" required>
                           </div>
                       </div>
 
@@ -114,24 +131,46 @@
             });
                         });
                     </script>
+                    <script>
+                            function checkAvailability(){
+                            var e = document.getElementById('prod_name');
+                            var selected_stock_type = e.options[e.selectedIndex].value;
+                            $.ajax({
+                                type:'get',
+                                url:'{{URL::to('checkAvailability')}}',
+                                data:{'prod_name':selected_stock_type},
+                                dataType:'json',
+                                success:function(data){
+                                    console.log(data);
+                                    document.getElementById('disp_quantity').setAttribute('value',data.stockQuantity);
+                                    document.getElementById('disp_price').setAttribute('value',data.sellingPrice);
+                                },
+                                error:function(){
+                                    console.log("Error - 2");
+                                }
+                });
+                            
+                            
+                            }
+                        </script>
 
                       <div class="form-group row justify-content-center">
                           <div class="col-md-3">
                               <label class="bmd-label-floating">Quantity</label>
-                              <input type="text" class="form-control {{ $errors->has('quantity') ? ' is-invalid' : '' }}" id="quantity" name="quantity" placeholder="Eg: 20pcs" required>
+                              <input type="text" class="form-control {{ $errors->has('quantity') ? ' is-invalid' : '' }}" id="quantity" name="quantity" placeholder="Eg: 20pcs" required onchange="getTotal()">
                           </div>
                       
 
                       
                             <div class="col-md-3">
                               <label class="bmd-label-floating">Unit Price</label>
-                              <input type="text" class="form-control {{ $errors->has('unit_price') ? ' is-invalid' : '' }}" id="unit_price" name="unit_price" placeholder="Eg: Rs 80" required>
+                              <input type="text" class="form-control {{ $errors->has('unit_price') ? ' is-invalid' : '' }}" id="unit_price" name="unit_price" placeholder="Eg: Rs 80" required onchange="getTotal()">
                           </div>
                       </div>
                       <div class="form-group row justify-content-center">
                           <div class="col-md-6">
                               <label class="bmd-label-floating">Discount</label>
-                              <input type="text" class="form-control {{ $errors->has('discount') ? ' is-invalid' : '' }}" id="discount" name="discount" placeholder="Eg: Rs 2500" required>
+                              <input type="text" class="form-control {{ $errors->has('discount') ? ' is-invalid' : '' }}" id="discount" name="discount" placeholder="Eg: Rs 2500" required onchange="getTotal()">
                           </div>
                       </div>
                       
@@ -139,9 +178,16 @@
                       <div class="form-group row justify-content-center">
                           <div class="col-md-6">
                               <label class="bmd-label-floating">Total Price</label>
-                        <input type="text" class="form-control {{ $errors->has('total_price') ? ' is-invalid' : '' }}" id="total_price" name="total_price" placeholder="Eg: Rs 25000" required>
+                              
+                          <input type="text" class="form-control {{ $errors->has('total_price') ? ' is-invalid' : '' }}" id="total_price" name="total_price" placeholder="Eg: Rs 25000"  required>
                           </div>
                       </div>
+                      <script>
+                          function getTotal(){
+                            var total = document.getElementById('quantity').value * document.getElementById('unit_price').value - document.getElementById('discount').value;
+                            document.getElementById('total_price').setAttribute('value',total);
+                          }
+                          </script>
 
                       <div class="form-group row justify-content-center">
                           <div class="col-md-6">

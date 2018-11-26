@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "a929cd0aa268c691ba1258c81bd9bb96",
-
-    "content-hash": "7ecfa5c7450ff6b6f1addb8f78e61342",
-
+    "content-hash": "68079f84290d025b62748bf4e1c784ae",
     "packages": [
         {
             "name": "consoletvs/charts",

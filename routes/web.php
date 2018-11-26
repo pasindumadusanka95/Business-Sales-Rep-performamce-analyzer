@@ -31,6 +31,8 @@ Route::get('/admin', 'DashboardController@admin');
 
 Route::get('/admin/table', 'DashboardController@table');
 
+Route::get('/admin/chart','DashboardController@chart');
+
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
 Route::get('/admin/registration', function () {
@@ -66,6 +68,8 @@ Route::get("/salesRep/Profile", 'SalesRepController@profile')->name('srprofile')
 
 Route::get('/salesRep/Sale', 'SalesRepController@addSale')->name('srsale');
 
+Route::get('/checkAvailability', 'SalesRepController@checkAvailability');
+
 Route::get("/stockKeeper/Profile", 'stockController@profile')->name('skprofile');
 
 Route::get('/stockKeeper/stockadd', 'stockController@addStock')->name('stockadd');
@@ -97,5 +101,5 @@ return view('stock_keeper.add_stock');
 
 return view('stockkeeper/add_stock');
 });
-*/
-Route::get('/findQty','SalesRepController@findQty');
+ */
+Route::get('/findQty', 'SalesRepController@findQty');
