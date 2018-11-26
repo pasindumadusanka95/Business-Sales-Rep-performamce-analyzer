@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use app\stock;
+use Illuminate\Http\Request;
 
 class stockController extends Controller
 {
@@ -15,7 +15,21 @@ class stockController extends Controller
      */
     public function index()
     {
-        //
+        return view('stock_keeper.stock_keeper_profile');
+    }
+
+    public function profile()
+    {
+        return view('stock_keeper.stock_keeper_profile');
+    }
+    public function addStock()
+    {
+        return view('stock_keeper.add_stock');
+    }
+
+    public function viewStock()
+    {
+        return view('stock_keeper.view_stock');
     }
 
     /**
@@ -23,10 +37,7 @@ class stockController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('stock.add_stock');
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,22 +48,22 @@ class stockController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'stock_name'=>'required',
-            'stock_qty'=> 'required|integer',
+            'stock_name' => 'required',
+            'stock_qty' => 'required|integer',
             'buying_price' => 'required|decimal',
-            'selling_price'=> 'required|decimal',
-            'stored_date' => 'required|date'
+            'selling_price' => 'required|decimal',
+            'stored_date' => 'required|date',
         ]);
         $stock = new stock([
             'stock_name' => $request->get('stock_name'),
-            'stock_qty'=> $request->get('stock_qty'),
-            'buying_price'=> $request->get('buying_price'),
-            'selling_price'=> $request->get('selling_price'),
-            'stored_date'=> $request->get('stored_date')
+            'stock_qty' => $request->get('stock_qty'),
+            'buying_price' => $request->get('buying_price'),
+            'selling_price' => $request->get('selling_price'),
+            'stored_date' => $request->get('stored_date'),
 
         ]);
         $stock->save();
-        return redirect('/stock')->with('success', 'Stock has been added');
+        return redirect('/stock_keeper')->with('success', 'Stock has been added');
     }
 
     /**
@@ -86,7 +97,26 @@ class stockController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'stock_name'=>'required',
+            'stock_qty'=> 'required|integer',
+            'buying_price' => 'required|integer',
+            'selling_price' => 'required|integer',
+            'stored_date' => 'required|integer'
+        ]);
+
+
+        $stock = stock::find($id);
+        $stock->stock_name = $request->get('stock_name');
+        $stock->stock_qty = $request->get('stock_qty');
+        $stock->buying_price = $request->get('buying_price');
+        $stock->selling_price = $request->get('selling_price');
+        $stock->stored_date = $request->get('stored_date');
+        $stock->save();
+
+
+
+        return redirect('/stock_keeper')->with('success', 'Stock has been updated');
     }
 
     /**
@@ -100,3 +130,4 @@ class stockController extends Controller
         //
     }
 }
+

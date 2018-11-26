@@ -90,6 +90,12 @@
                     </div>
                 </div>
             </div>
+
+
+            <div>
+
+              {!!    $chart->html() !!}
+            </div>
           {{--  <div class="col-md-4">
                 <div class="card card-chart">
                     <div class="card-header card-header-warning">
@@ -369,6 +375,7 @@
                     </div>
                 </div>
             </div>--}}
+
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-warning">
@@ -402,4 +409,10 @@
             </div>
         </div>
     </div>
+
+{!! Charts::scripts() !!}
+{!! $chart->script() !!}
+
+
 @endsection
+

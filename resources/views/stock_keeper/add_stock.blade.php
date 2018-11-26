@@ -1,55 +1,82 @@
 @extends('layouts.stock_header')
 
+@section('heading')
+    <div class="col-md-6">
+        <center>
+            <a class="btn btn-primary btn-simple btn-round btn-lg" href = "{{route('skprofile')}}"  >My Profile</a>
+            &nbsp;&nbsp;
+            <a class="btn btn-primary btn-round btn-lg" href = "{{route('stockadd')}}" >Add Stock</a>
+
+            <a class="btn btn-primary btn-round btn-lg" href = "{{route('stockview')}}" >View Stock</a>
+        </center>
+    </div>
+@endsection
+
 @section('content')
-    <style>
-        .upper {
-            margin-top: 40px;
-        }
-    </style>
-    <div class="card upper">
-        <div class="card-header">
-            Add Share
-        </div>
-        <div class="card-body">
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div><br />
-            @endif
-            <form method="post" action="{{ route('shares.store') }}">
-                <div class="form-group">
+
+    <div class="section">
+        <div class = "card">
+            <div class="card header card-header-primary">
+                <h4 class="card-title">New Stock</h4>
+                <p class="card-category">Add Stock Details</p>
+            </div>
+            <div class="container">
+
+                <form method="POST" action="{{ route('stock_keeper.store') }}" enctype="multipart/form-data">
                     @csrf
-                    <label for="name">Stock Name:</label>
-                    <input type="text" class="form-control" name="stock_name"/>
-                </div>
+                    <div class="card-body">
 
-                <div class="form-group">
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" class="form-control" name="stock_qty"/>
-                </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-6">
+                                <label class="bmd-label-floating">Stock Name:</label>
+                                <input type="text" class="form-control {{ $errors->has('stock_name') ? ' is-invalid' : '' }}" id="stock_name" name="stock_name" placeholder="" required>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="bPrice">Share Price :</label>
-                    <input type="decimal" class="form-control" name="buying_price"/>
-                </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-6">
+                                <label class="bmd-label-floating">Stock Quantity</label>
+                                <input type="number" class="form-control {{ $errors->has('stock_qty') ? ' is-invalid' : '' }}" id="stock_qty" name="stock_qty" placeholder="" required>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="sPrice">Share Price :</label>
-                    <input type="decimal" class="form-control" name="selling_price"/>
-                </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-3">
+                                <label class="bmd-label-floating">Buying Price</label>
+                                <input type="decimal" class="form-control {{ $errors->has('buying_price') ? ' is-invalid' : '' }}" id="buying_price" name="buying_price" placeholder="" required>
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="sdate">Stored Date :</label>
-                    <input type="date" class="form-control" name="stored_date"/>
-                </div>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-3">
+                                <label class="bmd-label-floating">Selling Price</label>
+                                <input type="decimal" class="form-control {{ $errors->has('selling_price') ? ' is-invalid' : '' }}" id="selling_price" name="selling_price" placeholder="" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-3">
+                                <label class="bmd-label-floating">Unit Price</label>
+                                <input type="date" class="form-control {{ $errors->has('stored_date') ? ' is-invalid' : '' }}" id="stored_date" name="stored_date" placeholder="" required>
+                            </div>
+                        </div>
 
 
-                <button type="submit" class="btn btn-primary">Add</button>
-            </form>
+                        <div class="form-group row justify-content-center">
+                            <div class="col-md-6">
+                                <label>Remarks</label><br/>
+
+                                <label class="bmd-label-floating"> Put other details about the stock, if any...</label>
+                                <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
+                            </div>
+                        </div>
+
+
+
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 @endsection

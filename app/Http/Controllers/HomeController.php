@@ -36,10 +36,10 @@ class HomeController extends Controller
             //return view('dashboard');
             return Redirect::to('/admin');
         } else if ($user->{'user_role'} == 1) {
-            return redirect("/salesRep" . $name);
+            return redirect("/salesRep");
             //return view('sales_rep.salesrep');
         } else if ($user->{'user_role'} == 2) {
-            return redirect("/stockkeeper" . $name);
+            return redirect("/stockkeeper");
         }
 
     }
