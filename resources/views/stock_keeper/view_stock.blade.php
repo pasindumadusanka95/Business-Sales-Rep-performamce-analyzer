@@ -17,6 +17,7 @@
             <tr>
                 <td>ID</td>
                 <td>Stock Name</td>
+
                 <td>Stock Quantity </td>
                 <td>Buying Price</td>
                 <td>Selling Price</td>
@@ -29,6 +30,7 @@
                 <tr>
                     <td>{{$stocks->id}}</td>
                     <td>{{$stocks->stock_name}}</td>
+
                     <td>{{$stocks->stock_qty}}</td>
                     <td>{{$stocks->buying_price}}</td>
                     <td>{{$stocks->selling_price}}</td>

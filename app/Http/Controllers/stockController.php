@@ -24,6 +24,7 @@ class stockController extends Controller
     }
     public function addStock()
     {
+        dd();
         return view('stock_keeper.add_stock');
     }
 
@@ -50,6 +51,7 @@ class stockController extends Controller
     {
         $request->validate([
             'stock_name' => 'required',
+
             'stock_qty' => 'required|integer',
             'buying_price' => 'required|float',
             'selling_price' => 'required|float',
@@ -57,6 +59,7 @@ class stockController extends Controller
         ]);
         $stock = new stock([
             'stock_name' => $request->get('stock_name'),
+
             'stock_qty' => $request->get('stock_qty'),
             'buying_price' => $request->get('buying_price'),
             'selling_price' => $request->get('selling_price'),
@@ -99,8 +102,14 @@ class stockController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+
+            'stock_name'=>'required',
+
+            'stock_qty'=> 'required|integer',
+
             'stock_name' => 'required',
             'stock_qty' => 'required|integer',
+ 
             'buying_price' => 'required|integer',
             'selling_price' => 'required|integer',
             'stored_date' => 'required|integer',
@@ -108,6 +117,7 @@ class stockController extends Controller
 
         $stock = stock::find($id);
         $stock->stock_name = $request->get('stock_name');
+
         $stock->stock_qty = $request->get('stock_qty');
         $stock->buying_price = $request->get('buying_price');
         $stock->selling_price = $request->get('selling_price');
