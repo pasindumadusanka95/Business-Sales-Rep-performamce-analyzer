@@ -49,6 +49,8 @@ class DashboardController extends Controller
         $Sales = SalesData::select('shop_name','shop_address','stock_type','quantity','unit_price','discount','total_price','receiptNo','remarks')->get();
         $SalesRepD= SalesRep::select('name','email','address','phone','salary','grade','sales_per_month')->get();
         $Stocks= stock::all();
+
+
         return view('table', compact('Sales','SalesRepD','Stocks'));
     }
      public function chart()
