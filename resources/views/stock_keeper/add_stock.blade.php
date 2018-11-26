@@ -33,6 +33,7 @@
                             </div>
                         </div>
 
+
                         <div class="form-group row justify-content-center">
                             <div class="col-md-6">
                                 <label class="bmd-label-floating">Stock Quantity</label>
@@ -60,17 +61,6 @@
                                 <input type="date" class="form-control {{ $errors->has('stored_date') ? ' is-invalid' : '' }}" id="stored_date" name="stored_date" placeholder="" required>
                             </div>
                         </div>
-
-
-                        <div class="form-group row justify-content-center">
-                            <div class="col-md-6">
-                                <label>Remarks</label><br/>
-
-                                <label class="bmd-label-floating"> Put other details about the stock, if any...</label>
-                                <textarea class="form-control" id="remarks" name="remarks" rows="3"></textarea>
-                            </div>
-                        </div>
-
 
 
                         <button type="submit" class="btn btn-primary">Add</button>

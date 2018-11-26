@@ -15,10 +15,11 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('stockName');
-            $table->integer('stockQuantity');
-            $table->decimal('buyingPrice');
-            $table->decimal('sellingPrice');
+            $table->string('stock_name');
+
+            $table->integer('stock_qty');
+            $table->decimal('buying_price');
+            $table->decimal('selling_price');
             $table->dateTime('storedDate');
             $table->timestamps();
 

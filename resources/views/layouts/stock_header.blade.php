@@ -133,16 +133,16 @@
             <p class="category">Stock Keeper</p>
             <div class="content">
                 <div class="social-description">
-                    <h2>26</h2>
-                    <p>Comments</p>
+                    <h2>Exp</h2>
+                    <p>12-18 Yrs</p>
                 </div>
                 <div class="social-description">
-                    <h2>26</h2>
-                    <p>Comments</p>
+                    <h2>Age</h2>
+                    <p>40</p>
                 </div>
                 <div class="social-description">
-                    <h2>48</h2>
-                    <p>Bookmarks</p>
+                    <h2>Salary</h2>
+                    <p>40,000</p>
                 </div>
             </div>
         </div>
