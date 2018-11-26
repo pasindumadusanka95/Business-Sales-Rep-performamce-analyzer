@@ -93,7 +93,7 @@
                       <div class="form-group row justify-content-center">
                           <div class="col-md-6">
                               <label class="bmd-label-floating">Receipt No.</label>
-                        <input type="text" class="form-control {{ $errors->has('receiptNo') ? ' is-invalid' : '' }}" id="receiptNo" name="receiptNo" placeholder="Eg: R5000" required>
+                        <input type="text" class="form-control {{ $errors->has('receiptNo') ? ' is-invalid' : '' }}" id="receiptNo" name="receiptNo" placeholder="Eg: 1001" required>
                           </div>
                       </div>
 

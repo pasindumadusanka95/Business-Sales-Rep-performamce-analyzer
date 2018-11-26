@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\SalesData;
-use App\User;
 use App\SalesRep;
 use App\stock;
-use Illuminate\Support\Facades\Auth;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SalesRepController extends Controller
 {
@@ -52,10 +53,10 @@ class SalesRepController extends Controller
 
         //retriev data + update -> stock
         $stype = $request->stock_type;
-        $stock = stock::where('stockName',$stype)->first();
+        $stock = stock::where('stockName', $stype)->first();
 
         // salesrep info
-        $rep = SalesRep::where('id',$repid)->first();
+        $rep = SalesRep::where('id', $repid)->first();
 
         //sales create
         SalesData::create([
@@ -70,13 +71,13 @@ class SalesRepController extends Controller
             'repid' => $repid,
             'remarks' => $request->remarks,
         ]);
-        
+
         //stock update
-        $stock->stockQuantity = ($stock->stockQuantity)-($request->quantity);
+        $stock->stockQuantity = ($stock->stockQuantity) - ($request->quantity);
         $stock->save();
 
         //update rep info
-        $rep->sales_per_month = ($rep->sales_per_month)+1;
+        $rep->sales_per_month = ($rep->sales_per_month) + 1;
         $rep->net_sales = ($rep->net_sales) + ($request->total_price);
         $rep->total_items = ($rep->total_items) + ($request->quantity);
         $rep->save();
