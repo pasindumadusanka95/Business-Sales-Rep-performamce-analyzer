@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\SalesData;
-use App\User;
 use App\SalesRep;
 use App\stock;
-use Illuminate\Support\Facades\Auth;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SalesRepController extends Controller
 {
@@ -17,15 +18,33 @@ class SalesRepController extends Controller
      */
     public function index()
     {
-        return view('sales_rep.repHome');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id',$id)->first();
+        //include $user & $srep -> view repHome
+        return view('sales_rep.repHome',compact('user','srep'));
     }
     public function profile()
     {
-        return view('sales_rep.repProfile');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id',$id)->first();
+        //include $user & $srep -> view repProfile
+        return view('sales_rep.repProfile',compact('user','srep'));
     }
     public function addSale()
     {
-        return view('sales_rep.salesRep');
+        $user = Auth::user();
+        $id = $user->id;
+        $srep = SalesRep::where('id',$id)->first();
+        $prod = stock::all();
+        //include $user & $srep -> view salesrep
+        return view('sales_rep.salesRep',compact('user','srep','prod'));
+    }
+
+    public function findQty(Request $request){
+        $qty  = stock::select('stockQuantity')->where('stockName',$request->id)->first();
+        return response()->json($qty);
     }
 
     /**
@@ -51,17 +70,17 @@ class SalesRepController extends Controller
         $repid = $user->id;
 
         //retriev data + update -> stock
-        $stype = $request->stock_type;
-        $stock = stock::where('stockName',$stype)->first();
+        $stype = $request->prod_id;
+        $stock = stock::where('stockName', $stype)->first();
 
         // salesrep info
-        $rep = SalesRep::where('id',$repid)->first();
+        $rep = SalesRep::where('id', $repid)->first();
 
         //sales create
         SalesData::create([
             'shop_name' => $request->shop_name,
             'shop_address' => $request->shop_address,
-            'stock_type' => $request->stock_type,
+            'stock_type' => $request->prod_id,
             'quantity' => $request->quantity,
             'unit_price' => $request->unit_price,
             'discount' => $request->discount,
@@ -70,13 +89,13 @@ class SalesRepController extends Controller
             'repid' => $repid,
             'remarks' => $request->remarks,
         ]);
-        
+
         //stock update
-        $stock->stockQuantity = ($stock->stockQuantity)-($request->quantity);
+        $stock->stockQuantity = ($stock->stockQuantity) - ($request->quantity);
         $stock->save();
 
         //update rep info
-        $rep->sales_per_month = ($rep->sales_per_month)+1;
+        $rep->sales_per_month = ($rep->sales_per_month) + 1;
         $rep->net_sales = ($rep->net_sales) + ($request->total_price);
         $rep->total_items = ($rep->total_items) + ($request->quantity);
         $rep->save();

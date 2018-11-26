@@ -126,23 +126,23 @@
                 <div class="page-header-image" data-parallax="true" style="background-image:url('');">
                 </div>
                 <div class="container">
-                  <div class="photo-container">
-                    <img src="" alt="">
+                  <div class="container">
+                    <img src="http://localhost/agency/Business-Sales-Rep-performamce-analyzer/public/assets/img/now-logo.png" alt="">
                   </div>
                   <h3 class="title">{{ Auth::user()->name }}</h3>
                   <p class="category">Sales Rep</p>
                   <div class="content">
                     <div class="social-description">
-                      <h2>26</h2>
-                      <p>Comments</p>
+                      <h2>{{ $srep->sales_per_month }}</h2>
+                      <p>Sales</p>
                     </div>
                     <div class="social-description">
-                      <h2>26</h2>
-                      <p>Comments</p>
+                      <h2>{{ $srep->net_sales }}</h2>
+                      <p>Revenue</p>
                     </div>
                     <div class="social-description">
-                      <h2>48</h2>
-                      <p>Bookmarks</p>
+                      <h2>{{ $srep->total_items }}</h2>
+                      <p>Items</p>
                     </div>
                   </div>
                 </div>
@@ -188,7 +188,7 @@
     </footer>
   </div>
   <!--   Core JS Files   -->
-  <script src="{{URL::asset('assets/js/core/jquery.min.js')}}" type="text/javascript"></script>
+  <!--<script src="{{URL::asset('assets/js/core/jquery.min.js')}}" type="text/javascript"></script>!-->
   <script src="{{URL::asset('assets/js/core/popper.min.js')}}" type="text/javascript"></script>
   <script src="{{URL::asset('assets/js/core/bootstrap.min.js')}}" type="text/javascript"></script>
   <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
@@ -215,6 +215,7 @@
   
         }
       </script>
+      
 </body>
 
 </html>

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\SalesData;
 use App\SalesRep;
+use App\stock;
 use App\SupplierData;
 use App\User;
+use Charts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
@@ -17,12 +19,34 @@ class DashboardController extends Controller
     {
 
         $suppliers = SupplierData::all();
-        $repcounter= SalesRep::count();
-        $totalsales= SalesData::count();
-        $totalrevenue=SalesData::sum('total_price');
+        $repcounter = SalesRep::count();
+        $totalsales = SalesData::count();
+        $totalrevenue = SalesData::sum('total_price');
 
+        /*$chartdata = SalesData::select(DB::raw('count('*') as `count`'), DB::raw('MONTH(dateOfSale) month'))
+        ->groupBy(function($m) {
+        return Carbon::parse($m->dateOfSale)->format('m');
+        })->get();*/
+        if (SalesData::all() != null) {
+            $chartdata = SalesData::selectRaw('COUNT(*) as count, YEAR(updated_at) year, MONTH(updated_at) month')
+                ->groupBy('year', 'month')
+                ->get();
+        }
+        /* $chartdata=SalesData::where(DB::raw("(DATE_FORMAT(dateOfSale,'%M'))"),date('M'))->get();*/
+        $chart = Charts::database($chartdata, 'bar', 'highcharts')
+            ->title("Sales Details")
+            ->elementLabel("Total Sales")
+            ->dimensions(1000, 500)
+            ->responsive(false);
 
-        return view('dashboard', compact('suppliers','repcounter','totalsales','totalrevenue'));
+        return view('dashboard', compact('suppliers', 'repcounter', 'totalsales', 'totalrevenue', 'chart'));
+    }
+    public function table()
+    {
+        $Sales = SalesData::select('shop_name','shop_address','stock_type','quantity','unit_price','discount','total_price','receiptNo','remarks')->get();
+        $SalesRepD= SalesRep::select('name','email','address','phone','salary','grade','sales_per_month')->get();
+        $Stocks= stock::all();
+        return view('table', compact('Sales','SalesRepD','Stocks'));
     }
 
     public function registration()
@@ -51,33 +75,30 @@ class DashboardController extends Controller
     protected function register(Request $request)
     {
 
-         $roles = Input::get('userrole');
-              
-                //registration - user
-                $user = User::create([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'password' => Hash::make($request->password),
-                    'address' => $request->address,
-                    'phone' => $request->phone,
-                    'user_role' =>  $roles,
-                ]);
-               //create details in the sales rep table too
-               if($roles=="1"){
-                SalesRep::create([
-                    'id' => $user->id,
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'address' => $request->name,
-                    'phone' => $request->phone,
-                ]);
-               }
+        $roles = Input::get('userrole');
+
+        //registration - user
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'user_role' => $roles,
+        ]);
+        //create details in the sales rep table too
+        if ($roles == "1") {
+            SalesRep::create([
+                'id' => $user->id,
+                'name' => $request->name,
+                'email' => $request->email,
+                'address' => $request->name,
+                'phone' => $request->phone,
+            ]);
+        }
 
         return redirect()->route('registration');
 
-
-        
     }
-
 
 }

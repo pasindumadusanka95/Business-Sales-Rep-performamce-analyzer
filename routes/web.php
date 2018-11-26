@@ -14,10 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-/*
+
 Route::get('/home', function () {
-return view('home');
-})->name('home');
+    return view('welcome');
+})->name('welcome');
 
 /*
 Route::get('/logout', function () {
@@ -29,6 +29,8 @@ Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
 
 Route::get('/admin', 'DashboardController@admin');
 
+Route::get('/admin/table', 'DashboardController@table');
+
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
 Route::get('/admin/registration', function () {
@@ -39,7 +41,7 @@ Route::get('/admin/user', function () {
     return view('user');
 });
 
-Route::get('/admin/table', function () {
+Route::post('/admin/table', function () {
     return view('table');
 });
 
@@ -50,7 +52,7 @@ Route::get('/reg', function () {
     return view('auth.register');
 });
 
-Route::get('/salesRep{name}', 'SalesRepController@index');
+Route::get('/salesRep', 'SalesRepController@index');
 
 Route::get('/stock_keeper{name}', 'stockController@index');
 
@@ -90,10 +92,10 @@ Route::resource('stock', 'stockController');
 
 Route::get('/add_stock', function () {
 
-    return view('stock_keeper.add_stock');
+return view('stock_keeper.add_stock');
 });
 
 return view('stockkeeper/add_stock');
 });
- */
-
+*/
+Route::get('/findQty','SalesRepController@findQty');
