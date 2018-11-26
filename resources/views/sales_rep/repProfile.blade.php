@@ -64,4 +64,7 @@
       </div>
   </div>
 </div>
+<div id="mychart"></div>
+{!! \Lava::render('LineChart', 'MyStocks', 'mychart') !!}
+
 @endsection
