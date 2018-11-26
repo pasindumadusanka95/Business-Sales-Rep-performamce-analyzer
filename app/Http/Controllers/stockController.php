@@ -30,7 +30,7 @@ class stockController extends Controller
 
     public function viewStock()
     {
-        $stock = stocks::all();
+        $stock = stock::all();
 
 
         return view('stock_keeper.view_stock',compact('stock'));
