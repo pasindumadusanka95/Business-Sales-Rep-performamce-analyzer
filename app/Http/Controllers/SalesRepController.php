@@ -43,7 +43,7 @@ class SalesRepController extends Controller
     }
 
     public function findQty(Request $request){
-        $qty  = stock::select('stockQuantity')->where('id',$request->id)->first();
+        $qty  = stock::select('stockQuantity')->where('stockName',$request->id)->first();
         return response()->json($qty);
     }
 
@@ -70,7 +70,7 @@ class SalesRepController extends Controller
         $repid = $user->id;
 
         //retriev data + update -> stock
-        $stype = $request->stock_type;
+        $stype = $request->prod_id;
         $stock = stock::where('stockName', $stype)->first();
 
         // salesrep info
@@ -80,7 +80,7 @@ class SalesRepController extends Controller
         SalesData::create([
             'shop_name' => $request->shop_name,
             'shop_address' => $request->shop_address,
-            'stock_type' => $request->stock_type,
+            'stock_type' => $request->prod_id,
             'quantity' => $request->quantity,
             'unit_price' => $request->unit_price,
             'discount' => $request->discount,

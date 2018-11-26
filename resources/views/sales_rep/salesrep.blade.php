@@ -35,13 +35,13 @@
                     @csrf
                   <div class="card-body">
 
-                        <div class="form-group row justify-content-center">
+                      <!--  <div class="form-group row justify-content-center">
                                 <div class="form-group bmd-form-group-date">
                                     <label class="bmd-label-floating">Date of Sale</label>
                               <input class="date form-control {{ $errors->has('dateOfSale') ? ' is-invalid' : '' }}" type="text" id="dateOfSale" name="dateOfSale" placeholder="Eg: MM-DD-YYYY" required>
                                 </div>
                     
-                        </div>
+                        </div>!-->
                              
                              <br>
      
@@ -67,7 +67,7 @@
                               <select name="prod_id" class="productname" id="prod_name">
                                   <option value="0" disabled="true" selected="true">--Select--</option>
                                       @foreach ($prod as $item)
-                                          <option value="{{$item->id}}">{{$item->stockName}}</option>
+                                          <option value="{{$item->stockName}}">{{$item->stockName}}</option>
                                       @endforeach
                               </select>
                           </div>
