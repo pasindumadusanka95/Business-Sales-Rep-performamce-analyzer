@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
 return view('home');
 })->name('home');
+
+/*
 Route::get('/logout', function () {
 return redirect('/login');
 });*/
@@ -26,6 +28,10 @@ Auth::routes();
 Route::get('/AuthUser', 'HomeController@index')->name('AuthUser');
 
 Route::get('/admin', 'DashboardController@admin');
+
+Route::get('/admin/table', 'DashboardController@table');
+
+
 
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
@@ -37,7 +43,7 @@ Route::get('/admin/user', function () {
     return view('user');
 });
 
-Route::get('/admin/table', function () {
+Route::post('/admin/table', function () {
     return view('table');
 });
 
@@ -62,11 +68,11 @@ Route::get("/salesRep/Profile", 'SalesRepController@profile')->name('srprofile')
 
 Route::get('/salesRep/Sale', 'SalesRepController@addSale')->name('srsale');
 
-Route::get("/stock_keeper/Profile", 'stockController@profile')->name('skprofile');
+Route::get("/stockKeeper/Profile", 'stockController@profile')->name('skprofile');
 
-Route::get('/stock_keeper/add_stock', 'stockController@add_stock')->name('stockadd');
+Route::get('/stockKeeper/addStock', 'stockController@addStock')->name('stockadd');
 
-Route::get('/stock_keeper/view_stock', 'stockRepController@view_stock')->name('stockview');
+Route::get('/stockKeeper/viewStock', 'stockRepController@viewStock')->name('stockview');
 
 /*Route::get('/salesRep{name}', function () {
 return view('sales_rep.salesrep');

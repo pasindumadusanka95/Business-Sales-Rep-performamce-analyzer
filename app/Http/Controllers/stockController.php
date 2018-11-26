@@ -18,15 +18,26 @@ class stockController extends Controller
         return view('stock_keeper.stock_keeper_profile');
     }
 
+    public function profile()
+    {
+        return view('stock_keeper.stock_keeper_profile');
+    }
+    public function addStock()
+    {
+        return view('stock_keeper.add_stock');
+    }
+
+    public function viewStock()
+    {
+        return view('stock_keeper.view_stock');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('stock_keeper.add_stock');
-    }
+
 
     /**
      * Store a newly created resource in storage.
