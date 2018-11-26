@@ -31,6 +31,8 @@ Route::get('/admin', 'DashboardController@admin');
 
 Route::get('/admin/table', 'DashboardController@table');
 
+Route::get('/admin/chart','DashboardController@chart');
+
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
 Route::get('/admin/registration', function () {
