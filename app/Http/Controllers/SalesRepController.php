@@ -22,7 +22,9 @@ class SalesRepController extends Controller
     }
     public function profile()
     {
-        return view('sales_rep.repProfile');
+
+        $totalsales = SalesData::count();
+        return view('sales_rep.repProfile', compact('totalsales'));
     }
     public function addSale()
     {
