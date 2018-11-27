@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Management;
 
 use Illuminate\Http\Request;
 
@@ -11,9 +12,20 @@ class managementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index1()
     {
-        return view('management.mgedit');
+        $mgt = Management::where('id',1)->first();
+        return view('management.mgedit',compact('mgt'));
+    }
+    public function index2()
+    {
+        $mgt = Management::where('id',2)->first();
+        return view('management.mgedit',compact('mgt'));
+    }
+    public function index3()
+    {
+        $mgt = Management::where('id',3)->first();
+        return view('management.mgedit',compact('mgt'));
     }
 
     /**

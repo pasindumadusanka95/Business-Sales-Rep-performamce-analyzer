@@ -9,11 +9,6 @@
     <div class="card">
         <div class="card-header card-header-primary">
             <h4 class="card-title ">Sales Rep Payment Details</h4>
-       
-                        <!--  <a href="/sample1/public" class="btn btn-sm btn-warning">Edit</a>!-->
-                         <a type="button" class="btn btn-sm btn-default float-right" href="{{ route('mgedit') }}">Edit Table</a>
-                         
-            
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -30,6 +25,15 @@
                                  <td>{{$item->grade}}</td>
                                  <td>{{$item->basic_sal}}</td>
                                  <td>{{$item->add_rate}}</td>
+                                @if ($item->grade == 1)
+                                <td><a type="button" class="btn btn-sm btn-default float-right" href="{{ route('mgedit1') }}">Edit Record</a></td>
+                                @endif 
+                                @if ($item->grade == 2)
+                                <td><a type="button" class="btn btn-sm btn-default float-right" href="{{ route('mgedit2') }}">Edit Record</a></td>
+                                @endif
+                                @if ($item->grade == 3)
+                                <td><a type="button" class="btn btn-sm btn-default float-right" href="{{ route('mgedit3') }}">Edit Record</a></td>
+                                @endif
                             </tr>
                         @endforeach
                        

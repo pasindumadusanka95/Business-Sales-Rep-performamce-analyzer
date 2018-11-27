@@ -8,6 +8,6 @@ class Management extends Model
 {
     protected $table = 'table_management';
     protected $fillable = [
-        'grade','basic_sal','add_rate',
+        'id','grade','basic_sal','add_rate',
     ];
 }
