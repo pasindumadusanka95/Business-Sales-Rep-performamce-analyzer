@@ -35,9 +35,21 @@ Route::get('/admin/chart', 'DashboardController@chart');
 
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
+Route::post('admin/update', 'DashboardController@update')->name('update');
+
+Route::post('admin/delete', 'DashboardController@delete')->name('delete');
+
 Route::get('/admin/registration', function () {
     return view('registration');
 })->name('registration');
+
+Route::get('/admin/manageusers', function () {
+    return view('manageusers');
+})->name('manageusers');
+
+Route::get('/admin/deleteusers', function () {
+    return view('deleteusers');
+})->name('deleteusers');
 
 Route::get('/admin/user', function () {
     return view('user');
@@ -54,9 +66,11 @@ Route::get('/reg', function () {
     return view('auth.register');
 });
 
-Route::get('/salesRep', 'SalesRepController@index')->name('salesRep');
+Route::get('/update', function () {
+    return view('auth.update');
+});
 
-Route::get('/stock_keeper{name}', 'stockController@index');
+Route::get('/salesRep', 'SalesRepController@index')->name('salesRep');
 
 /*
 Route::get('/stockkeeper', function () {
@@ -72,9 +86,9 @@ Route::get('/checkAvailability', 'SalesRepController@checkAvailability');
 
 Route::get("/stockKeeper/Profile", 'stockController@profile')->name('skprofile');
 
-Route::get('/stockKeeper/addStock', 'stockController@addStock');
+Route::get('/stockKeeper/addStock', 'stockController@addStock')->name('stockadd');
 
-Route::get('/stockKeeper/viewStock', 'stockController@viewStock');
+Route::get('/stockKeeper/viewStock', 'stockController@viewStock')->name('stockview');
 
 /*Route::get('/salesRep{name}', function () {
 return view('sales_rep.salesrep');
@@ -90,7 +104,6 @@ Route::post('/salesrep/update', 'SalesRepController@store')->name('stockupdate')
 
 Route::post('/stockkeeper/submit', 'stockController@store')->name('stockadd');
 
-Route::get('/stockkeeper', 'stockController@index');
 /*
 Route::resource('stock', 'stockController');
 

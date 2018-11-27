@@ -16,6 +16,6 @@ class stock extends Model
         'stock_qty',
         'buying_price',
         'selling_price',
-        'stored_date'
+        'stored_date',
     ];
 }

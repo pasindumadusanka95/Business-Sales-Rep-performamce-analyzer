@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use app\stock;
+use App\stock;
 use Illuminate\Http\Request;
 
 class stockController extends Controller
@@ -24,7 +24,6 @@ class stockController extends Controller
     }
     public function addStock()
     {
-        dd();
         return view('stock_keeper.add_stock');
     }
 
@@ -49,7 +48,7 @@ class stockController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request , [
+        $this->validate($request, [
             'stock_name' => 'required',
             'stock_qty' => 'required|integer',
             'buying_price' => 'required|float',
@@ -101,13 +100,13 @@ class stockController extends Controller
     {
         $request->validate([
 
-            'stock_name'=>'required',
+            'stock_name' => 'required',
 
-            'stock_qty'=> 'required|integer',
+            'stock_qty' => 'required|integer',
 
             'stock_name' => 'required',
             'stock_qty' => 'required|integer',
- 
+
             'buying_price' => 'required|integer',
             'selling_price' => 'required|integer',
             'stored_date' => 'required|integer',
