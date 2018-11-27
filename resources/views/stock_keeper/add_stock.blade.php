@@ -5,9 +5,9 @@
         <center>
             <a class="btn btn-primary btn-simple btn-round btn-lg" href = "{{route('skprofile')}}"  >My Profile</a>
             &nbsp;&nbsp;
-            <a class="btn btn-primary btn-round btn-lg" href = "{{route('stockadd')}}" >Add Stock</a>
+            <a class="btn btn-primary btn-round btn-lg" href = "{{route('/stockkeeper/addStock')}}" >Add Stock</a>
 
-            <a class="btn btn-primary btn-round btn-lg" href = "{{route('stockview')}}" >View Stock</a>
+            <a class="btn btn-primary btn-round btn-lg" href = "{{route('/stockkeeper/viewStock')}}" >View Stock</a>
         </center>
     </div>
 @endsection
@@ -22,7 +22,7 @@
             </div>
             <div class="container">
 
-                <form method="POST" action="{{ route('stockadd') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('stockkeeper/submit') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
 

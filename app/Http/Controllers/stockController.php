@@ -49,23 +49,21 @@ class stockController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $this->validate($request , [
             'stock_name' => 'required',
-
             'stock_qty' => 'required|integer',
             'buying_price' => 'required|float',
             'selling_price' => 'required|float',
             'stored_date' => 'required|date',
         ]);
-        $stock = new stock([
-            'stock_name' => $request->get('stock_name'),
 
-            'stock_qty' => $request->get('stock_qty'),
-            'buying_price' => $request->get('buying_price'),
-            'selling_price' => $request->get('selling_price'),
-            'stored_date' => $request->get('stored_date'),
+        $stock = new stock;
+        $stock->stock_name = $request->input('stock_name');
+        $stock->stock_qty = $request->input('stock_qty');
+        $stock->buying_price = $request->input('buying_price');
+        $stock->selling_price = $request->input('selling_price');
+        $stock->stored_date = $request->input('stored_date');
 
-        ]);
         $stock->save();
         return redirect('/stock_keeper')->with('success', 'Stock has been added');
     }
