@@ -41,7 +41,7 @@
         <div class = "card">  
           <div class="card header card-header-primary">
             <h4 class="card-title">New Sale</h4>
-            <p class="card-category">Add Sale Details</p>
+            <p id="sale" class="card-category">Add Sale Details</p>
           </div>
         <div class="container">
 
@@ -109,6 +109,19 @@
                       <script type="text/javascript">
 
                         $(document).ready(function(){
+                            var element_to_scroll_to = document.getElementById('sale');
+                            var navbar_height = 0;
+                            animate_scroll(element_to_scroll_to, navbar_height, 25);
+                            
+                            
+                            function animate_scroll (element, variable, offset) {
+                            $('html, body').stop().animate({
+                            scrollTop: $(element).offset().top - variable - offset
+                        }, 600);
+                        }
+                        });
+/*
+                        $(document).ready(function(){
                             $(document).on('change','#prod_name',function(){
                                 var prod_id = $(this).val();
                                 var a = $(this).parent();
@@ -130,6 +143,7 @@
                 });
             });
                         });
+                        */
                     </script>
                     <script>
                             function checkAvailability(){

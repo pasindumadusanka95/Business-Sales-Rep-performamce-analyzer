@@ -127,7 +127,7 @@
                 </div>
                 <div class="container">
                   <div class="container">
-                    <img src="http://localhost/agency/Business-Sales-Rep-performamce-analyzer/public/assets/img/now-logo.png" alt="">
+                      <img class="rounded-circle img-fluid img-raised" style="width: 200px;height: 190px;margin: 0 auto; background-color: rgba(255, 255, 255, 0.5);" src="{{URL::to('/')}}/assets/img/now-logo.png" alt="">
                   </div>
                   <h3 class="title">{{ Auth::user()->name }}</h3>
                   <p class="category">Sales Rep</p>
