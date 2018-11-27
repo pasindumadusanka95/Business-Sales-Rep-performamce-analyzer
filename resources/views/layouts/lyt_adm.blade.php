@@ -37,12 +37,12 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class = "nav-item {{(Helper::current_page("admin/user")? 'active ': '')}}">
+          {{--<li class = "nav-item {{(Helper::current_page("admin/user")? 'active ': '')}}">
             <a class="nav-link" href="{{url('/admin/user')}}">
               <i class="material-icons">person</i>
               <p>User Profile</p>
             </a>
-          </li>
+          </li>--}}
           <li class = "nav-item {{(Helper::current_page("admin/table")? 'active ': '')}}">
             <a class="nav-link" href="{{url('/admin/table')}}">
               <i class="material-icons">content_paste</i>
@@ -55,6 +55,18 @@
               <p>Registration</p>
             </a>
           </li>
+            <li class = "nav-item {{(Helper::current_page("admin/manageusers")? 'active ': '')}}">
+                <a class="nav-link" href="{{url('/admin/manageusers')}}">
+                    <i class="material-icons">peoples</i>
+                    <p>Update Staff</p>
+                </a>
+            </li>
+            <li class = "nav-item {{(Helper::current_page("admin/deleteusers")? 'active ': '')}}">
+                <a class="nav-link" href="{{url('/admin/deleteusers')}}">
+                    <i class="material-icons">peoples</i>
+                    <p>delete Staff</p>
+                </a>
+            </li>
         </ul>
       </div>
     </div>

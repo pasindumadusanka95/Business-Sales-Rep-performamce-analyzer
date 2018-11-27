@@ -30,7 +30,7 @@ class DashboardController extends Controller
         $result = SalesData::selectRaw('COUNT(*) as count, YEAR(updated_at) year, MONTH(updated_at) month')
             ->groupBy('year', 'month')
             ->get();
-        
+
 
         $lavat = new Lavacharts;
 
@@ -118,5 +118,44 @@ class DashboardController extends Controller
         return redirect()->route('registration');
 
     }
+
+    protected function update(Request $request)
+    {
+
+        $roles = Input::get('userrole');
+
+        $userupdate = User::where('email',$request->email)->update([
+            'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'address' => $request->address,
+            'phone' => $request->phone,
+            'user_role' => $roles,
+        ]);
+
+
+        if ($roles == "1"){
+            $userupdate = SalesRep::where('email',$request->email)->update([
+                'id' => $userupdate->id,
+                'name' => $request->name,
+                'password' => Hash::make($request->password),
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'user_role' => $roles,
+            ]);
+        }
+
+        return redirect()->route('manageusers');
+
+    }
+
+    protected function delete(Request $request){
+
+        $userdelete = User::where('email',$request->email)->delete();
+        $repdelete  = Salesrep::where('email',$request->email)->delete();
+
+
+        return redirect()->route('deleteusers');
+    }
+
 
 }
