@@ -6,7 +6,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <  <div class="card-header"><h2>{{ __('Delete Staff Details') }}<h2></div>
+                          <div class="card-header"><h2>{{ __('Delete Staff Details') }}<h2></div>
                         <div class="card-body">
 
                         <form method="POST" action="delete">

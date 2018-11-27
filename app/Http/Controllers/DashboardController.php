@@ -38,9 +38,7 @@ class DashboardController extends Controller
 
         $sales_performance->addDateColumn('date of month')
             ->addNumberColumn('Sales Count ');
-            /*->addNumberColumn('Official');*/
 
-        // Random Data For Example
 
         foreach($result as $results)
             $sales_performance->addRow([
@@ -146,6 +144,7 @@ class DashboardController extends Controller
 
         return redirect()->route('deleteusers');
     }
+
 
 
 }
