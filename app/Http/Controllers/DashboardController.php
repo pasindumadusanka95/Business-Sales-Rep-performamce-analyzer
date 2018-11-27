@@ -133,16 +133,7 @@ class DashboardController extends Controller
         ]);
 
 
-        if ($roles == "1"){
-            $userupdate = SalesRep::where('email',$request->email)->update([
-                'id' => $userupdate->id,
-                'name' => $request->name,
-                'password' => Hash::make($request->password),
-                'address' => $request->address,
-                'phone' => $request->phone,
-                'user_role' => $roles,
-            ]);
-        }
+
 
         return redirect()->route('manageusers');
 
@@ -151,7 +142,6 @@ class DashboardController extends Controller
     protected function delete(Request $request){
 
         $userdelete = User::where('email',$request->email)->delete();
-        $repdelete  = Salesrep::where('email',$request->email)->delete();
 
 
         return redirect()->route('deleteusers');
