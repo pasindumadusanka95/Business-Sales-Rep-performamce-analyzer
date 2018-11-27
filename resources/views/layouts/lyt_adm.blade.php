@@ -55,6 +55,12 @@
               <p>Registration</p>
             </a>
           </li>
+          <li class = "nav-item {{(Helper::current_page("admin/management")? 'active ': '')}}">
+            <a class="nav-link" href="{{url('/admin/management')}}">
+              <i class="material-icons">person</i>
+              <p>Sales Rep</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

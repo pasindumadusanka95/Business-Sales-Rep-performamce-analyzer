@@ -9,31 +9,6 @@
     </center>
     </div>
 @endsection
-<style>
-    .bmd-form-group-date{
-        padding: 10px;
-        margin: 10px,10px,10px,10px;
-        width: 150px;
-        width: 200px;
-        position: relative;
-        float: right;
-    }
-    .productname{
-        padding: 10px;
-        font-size: 10pt;
-        border-radius: 30px;
-        margin-left: 20px;
-        margin-right: 20px;
-        
-    }
-    .bt_check_available{
-        padding: 10px;
-        font-size: 10pt;
-        border-radius: 30px;
-        background-color: rgb(249, 99, 50); 
-        border: 0px;
-    }
-</style>
 
 @section('content')
 

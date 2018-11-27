@@ -35,6 +35,8 @@ Route::get('/admin/chart','DashboardController@chart');
 
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
+Route::get('admin/management','DashboardController@management');
+
 Route::get('/admin/registration', function () {
     return view('registration');
 })->name('registration');
@@ -103,3 +105,5 @@ return view('stockkeeper/add_stock');
 });
  */
 Route::get('/findQty', 'SalesRepController@findQty');
+
+Route::get('mgedit','managementController@index')->name('mgedit');

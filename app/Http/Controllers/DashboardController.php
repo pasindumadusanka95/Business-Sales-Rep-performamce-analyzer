@@ -8,6 +8,7 @@ use App\SalesRep;
 use App\stock;
 use App\SupplierData;
 use App\User;
+use App\Management;
 use Charts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -75,6 +76,12 @@ class DashboardController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'user_role' => 'required|int|max:2',
         ]);
+    }
+
+    protected function management()
+    {
+        $mgt = Management::all();
+        return view('management.management',compact('mgt'));
     }
 
     /**
