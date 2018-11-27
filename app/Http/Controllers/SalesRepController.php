@@ -33,12 +33,14 @@ class SalesRepController extends Controller
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
-        $sales = DB::select(DB::raw("SELECT SUM('total_price') AS 'Total sales' FROM sales where repid=$id GROUP BY DATE('created_at')"));
-        //$sales = json_decode($sales);
+        $numsales = DB::select(DB::raw("SELECT count(`total_price`) AS 'numSales',sum(`total_price`) AS 'totalRevenue',DATE(`created_at`) AS 'Date' FROM sales where sales.repid=2 GROUP BY DATE(`created_at`);"));
+        //$sales = json_encode($sales);
         //foreach ($sales as $i) {
-        \error_log('test');
-        error_log(print_r($sales, true));
-        //}
+        // \error_log("test new");
+        // for ($a = 0; $a < sizeof($sales); $a++) {
+        //     print("");
+        //     print_r($sales[$a]->total_price);
+        // }
 
         $lava = new Lavacharts;
 
@@ -46,28 +48,56 @@ class SalesRepController extends Controller
 
         $sales_performance->addDateColumn('Day of Month')
             ->addNumberColumn('Sale');
-/*
-foreach ($sales as $i) {
-$sales_performance->addRow([
-date('Y-m-d'), $i->total_price,
-]);
-};
- */
 
-        //get current date
-        $year_month = date('Y-m-');
-        $today = date('d');
-        // Random Data For Example
+        foreach ($numsales as $i) {
+            $sales_performance->addRow([
+                $i->Date, $i->numSales,
+            ]);
+        };
 
-        $chart = \Lava::CalendarChart('MyStocks', $sales_performance, [
+        $chart = \Lava::CalendarChart('FreqSales', $sales_performance, [
             'title' => 'Frequency of Sales',
             'fontSize' => 12,
-            'cellColor' => 'f96332', //Stroke options
-            'cellSize' => 5,
+            'unusedMonthOutlineColor' => [
+                'stroke' => '#ECECEC',
+                'strokeOpacity' => 0.75,
+                'strokeWidth' => 1,
+            ],
+            'dayOfWeekLabel' => [
+                'color' => '#4f5b0d',
+                'fontSize' => 16,
+                'italic' => true,
+            ],
+            'noDataPattern' => [
+                'color' => '#DDD',
+            ],
+            'colorAxis' => [
+                'colors' => ['#ffb8a0', '#f96332'],
+            ],
+        ]);
+
+        $sales_totalRev = $lava->DataTable();
+
+        $sales_totalRev->addDateColumn('Day of Month')
+            ->addNumberColumn('Revenue');
+
+        foreach ($numsales as $i) {
+            $sales_totalRev->addRow([
+                $i->Date, $i->totalRevenue,
+            ]);
+        };
+
+        $chart2 = \Lava::ColumnChart('SalesRev', $sales_totalRev, [
+            'title' => 'Revenue Per Day',
+            'titleTextStyle' => [
+                'fontSize' => 12,
+            ],
+            'colors' => ['#f96332'],
+            'opacity' => [0.5],
         ]);
 
         //include $user & $srep -> view repProfile
-        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'MyStocks', 'sales'));
+        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'FreqSales', 'SalesRev'));
     }
     public function addSale()
     {
