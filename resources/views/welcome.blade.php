@@ -93,16 +93,19 @@
   </nav>
   <!-- End Navbar -->
   <div class="wrapper">
-    <div class="page-header page-header-small">
+    <div class="page-header page-header-large">
       <div class="page-header-image" data-parallax="true" style="background-image: url('{{URL::to('/')}}/assets/img/bgimg.jpg');">
       </div>
       <div class="content-center">
         <div class="container">
           <h1 class="title">Business & Sales Rep Performance Analyzer</h1>
-
+          
         </div>
+        <img class="rounded-circle img-fluid img-raised" style="width: 200px;height: 190px;margin: 0 auto; background-color: rgba(255, 255, 255, 0.5);" src="{{URL::to('/')}}/assets/img/now-logo.png" alt="">
       </div>
+      
     </div>
+    
 
     {{--
     <div class="section section-about-us">

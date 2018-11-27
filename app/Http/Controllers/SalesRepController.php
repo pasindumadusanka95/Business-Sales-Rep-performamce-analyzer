@@ -8,6 +8,7 @@ use App\stock;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Khill\Lavacharts\Lavacharts;
 
 class SalesRepController extends Controller
 {
@@ -26,13 +27,32 @@ class SalesRepController extends Controller
     }
     public function profile()
     {
+        $lava = new Lavacharts;
+
+        $sales_performance = $lava->DataTable(); // Lava::DataTable() if using Laravel
+
+        $sales_performance->addDateColumn('Day of Month')
+            ->addNumberColumn('Projected')
+            ->addNumberColumn('Official');
+
+        // Random Data For Example
+        for ($a = 1; $a < 30; $a++) {
+            $sales_performance->addRow([
+                '2015-10-' . $a, rand(800, 1000), rand(800, 1000),
+            ]);
+        }
+
+        $chart = \Lava::LineChart('MyStocks', $sales_performance, [
+            'title' => 'This works in laravel 5.2',
+            'fontSize' => 24,
+        ]);
 
         $totalsales = SalesData::count();
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
         //include $user & $srep -> view repProfile
-        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales'));
+        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'MyStocks'));
     }
     public function addSale()
     {

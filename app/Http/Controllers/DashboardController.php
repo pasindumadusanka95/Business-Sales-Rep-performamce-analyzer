@@ -12,6 +12,8 @@ use Charts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+use Khill\Lavacharts\Lavacharts;
 
 class DashboardController extends Controller
 {
@@ -23,26 +25,37 @@ class DashboardController extends Controller
         $totalsales = SalesData::count();
         $totalrevenue = SalesData::sum('total_price');
 
-        /*$chartdata = SalesData::select(DB::raw('count('*') as `count`'), DB::raw('MONTH(dateOfSale) month'))
-        ->groupBy(function($m) {
-        return Carbon::parse($m->dateOfSale)->format('m');
-        })->get();*/
-       /* if (SalesData::all() != null) {
-            $chartdata = SalesData::selectRaw('COUNT(*) as count, YEAR(updated_at) year, MONTH(updated_at) month')
-                ->groupBy('year', 'month')
-                ->get();
-        }*/
-        /* $chartdata=SalesData::where(DB::raw("(DATE_FORMAT(dateOfSale,'%M'))"),date('M'))->get();*/
-        /*$chart = Charts::database($chartdata, 'bar', 'highcharts')
-            ->title("Sales Details")
-            ->elementLabel("Total Sales")
-            ->dimensions(1000, 500)
-            ->responsive(false);*/
 
-       /* $result = SalesData::selectRaw('COUNT(*) as count, MONTH(updated_at) month')
-            ->groupBy('month')
-            ->get();*/
-        return view('dashboard', compact('suppliers', 'repcounter', 'totalsales', 'totalrevenue'));
+
+        $result = SalesData::selectRaw('COUNT(*) as count, YEAR(updated_at) year, MONTH(updated_at) month')
+            ->groupBy('year', 'month')
+            ->get();
+        
+
+        $lavat = new Lavacharts;
+
+        $sales_performance = $lavat->DataTable(); // Lava::DataTable() if using Laravel
+
+        $sales_performance->addDateColumn('date of month')
+            ->addNumberColumn('Sales Count ');
+            /*->addNumberColumn('Official');*/
+
+        // Random Data For Example
+
+        foreach($result as $results)
+            $sales_performance->addRow([
+                $results->year.'-'.$results->month.'-01' ,
+                $results->count,
+            ]);
+
+
+
+        $chart = \Lava::BarChart('Mysales', $sales_performance, [
+            'title' => 'Total sales per Months',
+            'fontSize' => 12,
+        ]);
+
+        return view('dashboard', compact('suppliers', 'repcounter', 'totalsales', 'totalrevenue','Mysales'));
     }
     public function table()
     {
@@ -53,13 +66,7 @@ class DashboardController extends Controller
 
         return view('table', compact('Sales','SalesRepD','Stocks'));
     }
-     public function chart()
-       {
-           $result = SalesData::selectRaw('COUNT(*) as count, MONTH(updated_at) month')
-               ->groupBy('month')
-               ->get();
-           return response()->json($result);
-       }
+
     public function registration()
     {
         return view('registration');

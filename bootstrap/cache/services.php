@@ -41,6 +41,7 @@
     37 => 'App\\Providers\\RouteServiceProvider',
     38 => 'App\\Providers\\HelperServiceProvider',
     39 => 'ConsoleTVs\\Charts\\ChartsServiceProvider',
+    40 => 'Khill\\Lavacharts\\Laravel\\LavachartsServiceProvider',
   ),
   'eager' => 
   array (
@@ -178,6 +179,7 @@
     'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'NunoMaduro\\Collision\\Contracts\\Provider' => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    'lavacharts' => 'Khill\\Lavacharts\\Laravel\\LavachartsServiceProvider',
   ),
   'when' => 
   array (
@@ -224,6 +226,9 @@
     array (
     ),
     'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => 
+    array (
+    ),
+    'Khill\\Lavacharts\\Laravel\\LavachartsServiceProvider' => 
     array (
     ),
   ),

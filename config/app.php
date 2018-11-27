@@ -162,6 +162,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\HelperServiceProvider::class,
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
     ],
 
     /*
@@ -216,6 +217,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
 
     ],
 
