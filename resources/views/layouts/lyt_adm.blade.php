@@ -145,29 +145,14 @@
      <div class="content">
          @yield('content')
      </div>
-     {{-- <footer class="footer">
+     <footer class="footer">
         <div class="container-fluid">
           <nav class="float-left">
             <ul>
               <li>
-                <a href="https://www.creative-tim.com">
-                  Creative Tim
-                </a>
-              </li>
-              <li>
-                <a href="https://creative-tim.com/presentation">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="http://blog.creative-tim.com">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="https://www.creative-tim.com/license">
-                  Licenses
-                </a>
+                Pulasthi Rathnayaka Distributors
+                <br>
+                No: 68/B, Daskara, Muruthagahamula, Gampola.
               </li>
             </ul>
           </nav>
@@ -179,7 +164,7 @@
 
           </div>
         </div>
-      </footer>--}}
+      </footer>
     </div>
   </div>
   <!--   Core JS Files   -->

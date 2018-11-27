@@ -17,6 +17,6 @@ class FeedbackController extends Controller
 
         $feedBack->save();
 
-        return view('welcome');
+        return redirect()->route('welcome');
     }
 }
