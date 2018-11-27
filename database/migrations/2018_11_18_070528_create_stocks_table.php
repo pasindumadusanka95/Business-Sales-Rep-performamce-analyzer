@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateStocksTable extends Migration
 {
@@ -15,11 +15,11 @@ class CreateStocksTable extends Migration
     {
         Schema::create('stocks', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('stock_name');
+            $table->string('stockName');
 
-            $table->integer('stock_qty');
-            $table->decimal('buying_price');
-            $table->decimal('selling_price');
+            $table->integer('stockQuantity');
+            $table->decimal('buyingPrice');
+            $table->decimal('sellingPrice');
             $table->dateTime('storedDate');
             $table->timestamps();
 

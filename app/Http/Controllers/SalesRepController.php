@@ -6,6 +6,7 @@ use App\SalesData;
 use App\SalesRep;
 use App\stock;
 use App\User;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Khill\Lavacharts\Lavacharts;
@@ -27,32 +28,44 @@ class SalesRepController extends Controller
     }
     public function profile()
     {
-        $lava = new Lavacharts;
-
-        $sales_performance = $lava->DataTable(); // Lava::DataTable() if using Laravel
-
-        $sales_performance->addDateColumn('Day of Month')
-            ->addNumberColumn('Projected')
-            ->addNumberColumn('Official');
-
-        // Random Data For Example
-        for ($a = 1; $a < 30; $a++) {
-            $sales_performance->addRow([
-                '2015-10-' . $a, rand(800, 1000), rand(800, 1000),
-            ]);
-        }
-
-        $chart = \Lava::LineChart('MyStocks', $sales_performance, [
-            'title' => 'This works in laravel 5.2',
-            'fontSize' => 24,
-        ]);
 
         $totalsales = SalesData::count();
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
+        $sales = DB::raw("SELECT SUM('total_price') AS 'Total sales' FROM sales where sales.repid=" . $id . " GROUP BY DATE('created_at')");
+        //$sales = json_decode($sales);
+        //foreach ($sales as $i) {
+        error_log("Test" . $sales);
+        //}
+
+        $lava = new Lavacharts;
+
+        $sales_performance = $lava->DataTable(); // Lava::DataTable() if using Laravel
+
+        $sales_performance->addDateColumn('Day of Month')
+            ->addNumberColumn('Sale');
+
+        foreach ($sales as $i) {
+            $sales_performance->addRow([
+                date('Y-m-d'), $i->total_price,
+            ]);
+        };
+
+        //get current date
+        $year_month = date('Y-m-');
+        $today = date('d');
+        // Random Data For Example
+
+        $chart = \Lava::CalendarChart('MyStocks', $sales_performance, [
+            'title' => 'Frequency of Sales',
+            'fontSize' => 12,
+            'cellColor' => 'f96332', //Stroke options
+            'cellSize' => 5,
+        ]);
+
         //include $user & $srep -> view repProfile
-        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'MyStocks'));
+        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'MyStocks', 'sales'));
     }
     public function addSale()
     {

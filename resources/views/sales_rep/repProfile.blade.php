@@ -65,6 +65,6 @@
   </div>
 </div>
 <div id="mychart"></div>
-{!! \Lava::render('LineChart', 'MyStocks', 'mychart') !!}
+{!! \Lava::render('CalendarChart', 'MyStocks', 'mychart') !!}
 
 @endsection
