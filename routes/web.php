@@ -35,9 +35,21 @@ Route::get('/admin/chart', 'DashboardController@chart');
 
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
+Route::post('admin/update', 'DashboardController@update')->name('update');
+
+Route::post('admin/delete', 'DashboardController@delete')->name('delete');
+
 Route::get('/admin/registration', function () {
     return view('registration');
 })->name('registration');
+
+Route::get('/admin/manageusers', function () {
+    return view('manageusers');
+})->name('manageusers');
+
+Route::get('/admin/deleteusers', function () {
+    return view('deleteusers');
+})->name('deleteusers');
 
 Route::get('/admin/user', function () {
     return view('user');
@@ -52,6 +64,10 @@ Route::get('/admin/icons', function () {
 });
 Route::get('/reg', function () {
     return view('auth.register');
+});
+
+Route::get('/update', function () {
+    return view('auth.update');
 });
 
 Route::get('/salesRep', 'SalesRepController@index')->name('salesRep');

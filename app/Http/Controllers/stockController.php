@@ -132,6 +132,9 @@ class stockController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stock = stock::find($id);
+        $stock->delete();
+
+        return redirect('/stock_keeper')->with('success', 'Stock has been deleted Successfully');
     }
 }

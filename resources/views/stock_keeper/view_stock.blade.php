@@ -30,7 +30,6 @@
                 <tr>
                     <td>{{$stocks->id}}</td>
                     <td>{{$stocks->stock_name}}</td>
-
                     <td>{{$stocks->stock_qty}}</td>
                     <td>{{$stocks->buying_price}}</td>
                     <td>{{$stocks->selling_price}}</td>
