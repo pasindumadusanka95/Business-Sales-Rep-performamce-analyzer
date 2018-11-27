@@ -35,9 +35,9 @@
                     <td>{{$stocks->buying_price}}</td>
                     <td>{{$stocks->selling_price}}</td>
                     <td>{{$stocks->stored_date}}</td>
-                    <td><a href="{{ route('stocks.edit',$stocks->id)}}" class="btn btn-primary">Edit</a></td>
+                <td><a href="{{ /*route('stocks.edit',$stocks->id)*/}}" class="btn btn-primary">Edit</a></td>
                     <td>
-                        <form action="{{ route('stocks.destroy', $stocks->id)}}" method="post">
+                    <form action="{{/* route('stocks.destroy', $stocks->id)*/}}" method="post">
                             @csrf
                             @method('DELETE')
                             <button class="btn btn-danger" type="submit">Delete</button>
