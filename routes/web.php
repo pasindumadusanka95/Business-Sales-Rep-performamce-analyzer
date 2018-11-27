@@ -31,7 +31,7 @@ Route::get('/admin', 'DashboardController@admin');
 
 Route::get('/admin/table', 'DashboardController@table');
 
-Route::get('/admin/chart','DashboardController@chart');
+Route::get('/admin/chart', 'DashboardController@chart');
 
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
@@ -54,7 +54,7 @@ Route::get('/reg', function () {
     return view('auth.register');
 });
 
-Route::get('/salesRep', 'SalesRepController@index');
+Route::get('/salesRep', 'SalesRepController@index')->name('salesRep');
 
 Route::get('/stock_keeper{name}', 'stockController@index');
 
