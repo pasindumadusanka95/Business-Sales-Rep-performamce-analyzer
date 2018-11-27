@@ -33,7 +33,7 @@ class SalesRepController extends Controller
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
-        $numsales = DB::select(DB::raw("SELECT count(`total_price`) AS 'numSales',sum(`total_price`) AS 'totalRevenue',DATE(`created_at`) AS 'Date' FROM sales where sales.repid=2 GROUP BY DATE(`created_at`);"));
+        $numsales = DB::select(DB::raw("SELECT count(`total_price`) AS 'numSales',sum(`total_price`) AS 'totalRevenue',DATE(`created_at`) AS 'Date' FROM sales where sales.repid=$id GROUP BY DATE(`created_at`);"));
         //$sales = json_encode($sales);
         //foreach ($sales as $i) {
         // \error_log("test new");
@@ -96,8 +96,26 @@ class SalesRepController extends Controller
             'opacity' => [0.5],
         ]);
 
+        $sales_perType = $lava->DataTable();
+
+        $sales_perType->addStringColumn('Type')
+            ->addNumberColumn('Quantity');
+
+        $sperType = DB::select(DB::raw("SELECT sum(`quantity`) as 'Quantity',`stock_type` from sales where sales.repid=$id Group By `stock_type`"));
+        foreach ($sperType as $m) {
+            $sales_perType->addRow([
+                $m->stock_type, $m->Quantity,
+            ]);
+        }
+
+        $chart3 = \Lava::BarChart('SalesPType', $sales_perType, [
+            'title' => 'Sales Per Type',
+            'fontSize' => 12,
+            'colors' => ['#f96332'],
+        ]);
+
         //include $user & $srep -> view repProfile
-        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'FreqSales', 'SalesRev'));
+        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'FreqSales', 'SalesRev', 'SalesPType'));
     }
     public function addSale()
     {

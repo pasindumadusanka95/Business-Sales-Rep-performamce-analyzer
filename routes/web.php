@@ -100,3 +100,5 @@ return view('stockkeeper/add_stock');
 });
  */
 Route::get('/findQty', 'SalesRepController@findQty');
+
+Route::post('/feedback', 'FeedbackController@sendFeedback')->name('feedback');
