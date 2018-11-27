@@ -11,9 +11,9 @@
                 <form class="form" method="POST" action="{{ route('login') }}">
                     @csrf
                   <div class="card-header text-center">
-                    <div class="logo-container">
-                      <img src="{{URL::to('/')}}/assets/img/now-logo.png" alt="">
-                    </div>
+                    <!--div style="width: 200px;height: auto;margin: 10px;text-align: center;"-->
+                    <img class="rounded-circle img-fluid img-raised" style="width: 200px;height: 190px;margin: 0 auto; background-color: rgba(255, 255, 255, 0.5);" src="{{URL::to('/')}}/assets/img/now-logo.png" alt="">
+                    <!--/div-->
                   </div>
                   <div class="card-body">
                     <div class="input-group no-border input-lg">
