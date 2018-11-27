@@ -14,7 +14,7 @@ class managementController extends Controller
      */
     public function index1()
     {
-        $mgt = Management::where('id',1)->first();
+        $mgt = Management::where('id',3)->first();
         return view('management.mgedit',compact('mgt'));
     }
     public function index2()
@@ -24,7 +24,7 @@ class managementController extends Controller
     }
     public function index3()
     {
-        $mgt = Management::where('id',3)->first();
+        $mgt = Management::where('id',1)->first();
         return view('management.mgedit',compact('mgt'));
     }
 
@@ -46,7 +46,25 @@ class managementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+       // $rgrade = explode(' ',$request->grade);
+        $grade = $request->grade;
+        //$rsal = explode(' ',$request->sal);
+        $sal = $request->sal;
+       // $rrate = explode(' ',$request->rate);
+        $rate = $request->rate;
+        $row = Management::where('grade',$grade)->first();
+        if(!is_null($grade)){
+            $row->grade = $grade;
+        }
+        if(!is_null($sal)){
+            $row->basic_sal = $sal;
+        }
+        if(!is_null($rate)){
+            $row->add_rate = $rate;
+        }
+        $row->save();
+        return redirect()->route('management');
     }
 
     /**

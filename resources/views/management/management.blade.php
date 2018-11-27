@@ -43,6 +43,24 @@
         </div>
     </div>
 </div>
-
+<br/>
+<div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary justify-content-center">
+                <h4 class="card-title "><center>Salary Sheet</center></h4>
+            </div>
+            <div class="card-body">
+                    <form method="POST" action="{{ route('mgstore') }}">
+                            @csrf
+                    <input type="text" id="rep_id" name="rep_id" class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                            {{ __('Search') }}
+                        </button>
+                    </form>
+                    <input type="text" id="basic_sal" name="basic_sal" class="form-group">
+            </div>
+        </div>
+        
+    </div>
 
 @endsection

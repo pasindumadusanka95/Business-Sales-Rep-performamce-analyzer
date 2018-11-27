@@ -21,21 +21,21 @@
                                     <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Sales rep Grade') }}</label>
                                         <br/>
                                     <div class="col-md-3">
-                                      <input id="grade" type="text" class="form-control" name="grade" placeholder="Grade {{$mgt->grade}}" >
+                                      <input id="grade" type="text" class="form-control" name="grade" value="{{$mgt->grade}}" >
                                     </div>
                             </div>
                             <div class="form-group row justify-content-center">
                                     <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Basic Salary') }}</label>
                                         <br/>
                                     <div class="col-md-3">
-                                      <input id="grade" type="text" class="form-control" name="sal" placeholder="Rs. {{$mgt->basic_sal}}" >
+                                      <input id="grade" type="text" class="form-control" name="sal" value="{{$mgt->basic_sal}}" >
                                     </div>
                             </div>
                             <div class="form-group row justify-content-center">
                                     <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Additional payment per sale') }}</label>
                                         <br/>
                                     <div class="col-md-3">
-                                      <input id="grade" type="text" class="form-control" name="rate" placeholder="Rs. {{$mgt->add_rate}}" >
+                                      <input id="grade" type="text" class="form-control" name="rate" value="{{$mgt->add_rate}}" >
                                     </div>
                             </div>
                             <div class="form-group row mb-0">
