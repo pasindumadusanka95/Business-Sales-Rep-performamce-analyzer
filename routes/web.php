@@ -54,7 +54,7 @@ Route::get('/reg', function () {
     return view('auth.register');
 });
 
-Route::get('/salesRep', 'SalesRepController@index');
+Route::get('/salesRep', 'SalesRepController@index')->name('salesRep');
 
 Route::get('/stock_keeper{name}', 'stockController@index');
 

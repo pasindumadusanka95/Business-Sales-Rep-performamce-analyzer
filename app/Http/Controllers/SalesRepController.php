@@ -33,10 +33,11 @@ class SalesRepController extends Controller
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
-        $sales = DB::raw("SELECT SUM('total_price') AS 'Total sales' FROM sales where sales.repid=" . $id . " GROUP BY DATE('created_at')");
+        $sales = DB::select(DB::raw("SELECT SUM('total_price') AS 'Total sales' FROM sales where repid=$id GROUP BY DATE('created_at')"));
         //$sales = json_decode($sales);
         //foreach ($sales as $i) {
-        error_log("Test" . $sales);
+        \error_log('test');
+        error_log(print_r($sales, true));
         //}
 
         $lava = new Lavacharts;
@@ -45,12 +46,13 @@ class SalesRepController extends Controller
 
         $sales_performance->addDateColumn('Day of Month')
             ->addNumberColumn('Sale');
-
-        foreach ($sales as $i) {
-            $sales_performance->addRow([
-                date('Y-m-d'), $i->total_price,
-            ]);
-        };
+/*
+foreach ($sales as $i) {
+$sales_performance->addRow([
+date('Y-m-d'), $i->total_price,
+]);
+};
+ */
 
         //get current date
         $year_month = date('Y-m-');
