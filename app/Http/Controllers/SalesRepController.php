@@ -195,6 +195,7 @@ class SalesRepController extends Controller
         $rep->total_items = ($rep->total_items) + ($request->quantity);
         $rep->save();
 
+        $request->session()->flash('alert-success', 'Sale has been added Successfully');
         return redirect()->route('srsale');
     }
 
