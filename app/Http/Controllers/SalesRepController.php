@@ -88,9 +88,10 @@ class SalesRepController extends Controller
         };
 
         $chart2 = \Lava::ColumnChart('SalesRev', $sales_totalRev, [
-            'title' => 'Revenue Per Day',
+            'title' => 'Revenue Per Sale',
             'titleTextStyle' => [
                 'fontSize' => 12,
+                'fontFamily' => 'Montserrat',
             ],
             'colors' => ['#f96332'],
             'opacity' => [0.5],

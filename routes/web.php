@@ -35,6 +35,7 @@ Route::get('/admin/chart', 'DashboardController@chart')->middleware('auth:web');
 
 Route::post('admin/reg', 'DashboardController@register')->name('reg');
 
+Route::get('admin/management','DashboardController@management')->name('management');
 Route::post('admin/update', 'DashboardController@update')->name('update');
 
 Route::post('admin/delete', 'DashboardController@delete')->name('delete');
@@ -117,4 +118,12 @@ return view('stockkeeper/add_stock');
  */
 Route::get('/findQty', 'SalesRepController@findQty');
 
+Route::get('mgedit1','managementController@index1')->name('mgedit1');
+Route::get('mgedit2','managementController@index2')->name('mgedit2');
+Route::get('mgedit3','managementController@index3')->name('mgedit3');
+
+Route::post('/admin/management/mgstore','managementController@store')->name('mgstore');
+
+Route::post('/admin/management/mgsearch','managementController@search')->name('mgsearch');
+Route::post('admin/management/addsal','managementController@addsal')->name('addSal');
 Route::post('/feedback', 'FeedbackController@sendFeedback')->name('feedback');

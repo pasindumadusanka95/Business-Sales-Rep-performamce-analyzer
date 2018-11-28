@@ -9,8 +9,10 @@
                 <i class="material-icons">search</i>
                 <div class="ripple-container"></div>
             </button>
+            
         </div>
     </form>
+    <h4>Filters</h4>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">

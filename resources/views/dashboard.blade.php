@@ -61,7 +61,16 @@
 
             <div id="mych"></div>
             {!! \Lava::render('BarChart', 'Mysales', 'mych') !!}
+            
 
+            <div id="mych2"></div>
+            {!! \Lava::render('ComboChart', 'SalesRepComparisonNS', 'mych2') !!}
+
+            <div id="mych3"></div>
+            {!! \Lava::render('ComboChart', 'SalesRepComparisonTR', 'mych3') !!}
+
+            <div id="mych4"></div>
+            {!! \Lava::render('ComboChart', 'SalesRepComparisonTI', 'mych4') !!}
 
             <div class="col-lg-10 col-md-14 ">
                 <div class="card">
