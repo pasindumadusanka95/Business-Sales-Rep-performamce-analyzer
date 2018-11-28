@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\stock;
+use DB;
 use Illuminate\Http\Request;
 
 class stockController extends Controller
@@ -29,7 +29,8 @@ class stockController extends Controller
 
     public function viewStock()
     {
-        $stock = stock::all();
+
+        $stock = DB::select(DB::raw("SELECT * from stocks"));
 
         return view('stock_keeper.view_stock', compact('stock'));
     }
@@ -64,7 +65,7 @@ class stockController extends Controller
         $stock->stored_date = $request->input('stored_date');
 
         $stock->save();
-        return redirect('/stock_keeper_profile')->with('success', 'Stock has been added');
+        return viewStock()->with('success', 'Stock has been added');
     }
 
     /**
@@ -73,10 +74,10 @@ class stockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        $stock = stock::where('id',$id)->first();
-        return view('stock_keeper.edit',compact('stock'));
+        $stock = stock::where('id', $request->id)->first();
+        return view('stock_keeper.edit', compact('stock'));
     }
 
     /**
@@ -97,7 +98,7 @@ class stockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $request->validate([
 
@@ -113,7 +114,7 @@ class stockController extends Controller
             'stored_date' => 'required|integer',
         ]);
 
-        $stock = stock::find($id);
+        $stock = stock::find($request->id);
         $stock->stock_name = $request->get('stock_name');
 
         $stock->stock_qty = $request->get('stock_qty');
@@ -122,7 +123,7 @@ class stockController extends Controller
         $stock->stored_date = $request->get('stored_date');
         $stock->save();
 
-        return redirect()->route('editstock');
+        return viewStock()->with('success', 'Stock has been updated Successfully');
     }
 
     /**
@@ -131,15 +132,16 @@ class stockController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
 
     }
 
-    public function delete($id){
-        $stock = stock::find($id);
+    public function delete(Request $request)
+    {
+        $stock = stock::find($request->id);
         $stock->delete();
 
-        return redirect('/stock_keeper')->with('success', 'Stock has been deleted Successfully');
+        return viewStock()->with('success', 'Stock has been deleted Successfully');
     }
 }

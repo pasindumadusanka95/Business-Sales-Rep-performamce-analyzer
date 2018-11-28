@@ -105,7 +105,10 @@ return view('sales_rep.salesrep');
 
 Route::post('/salesrep/update', 'SalesRepController@store')->name('stockupdate');
 
-Route::post('/stockkeeper/submit', 'stockController@store')->name('stockadd');
+Route::post('/stockKeeper/addstockpost', 'stockController@store')->name('addStockPost');
+Route::post('/stockKeeper/editstock', 'stockController@show')->name('editstock');
+Route::post('/stockKeeper/updatestock', 'stockController@update')->name('updatestock');
+Route::post('/stockKeeper/deletestock', 'stockController@destroy')->name('destroystock');
 
 /*
 Route::resource('stock', 'stockController');

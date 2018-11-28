@@ -22,7 +22,7 @@
             </div>
             <div class="container">
 
-                <form method="post" action="{{route('viewstock')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('addStockPost')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
 
