@@ -10,8 +10,24 @@
     </div>
 @endsection
 
-@section('content')
 
+@section('content')
+<style>
+.flash-message{
+    z-index: 50000;
+    position: relative;
+    width: auto;
+    height: auto;
+}
+</style>
+<div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+          @if(Session::has('alert-' . $msg))
+    
+          <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+          @endif
+        @endforeach
+      </div> 
       <div class="section">
         <div class = "card">  
           <div class="card header card-header-primary">

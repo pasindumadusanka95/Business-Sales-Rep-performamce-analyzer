@@ -3,16 +3,7 @@
 
 
     <form class="navbar-form" action="">
-        <div class="input-group no-border">
-            <input type="text" value="" class="form-control" placeholder="Search...">
-            <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                <i class="material-icons">search</i>
-                <div class="ripple-container"></div>
-            </button>
-            
-        </div>
     </form>
-    <h4>Filters</h4>
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -133,6 +124,36 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12">
+                            <div class="card card-plain">
+                                <div class="card-header card-header-primary">
+                                    <h4 class="card-title mt-0">Feedback</h4>
+    
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="">
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Message</th>
+    
+                                            </thead>
+                                            <tbody>
+                                            @foreach($Message as $messages)
+                                                <tr>
+                                                    <td>{{$messages->name}}</td>
+                                                    <td>{{$messages->email}}</td>
+                                                    <td>{{$messages->message}}</td>
+    
+                                                </tr>
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div>

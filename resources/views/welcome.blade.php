@@ -165,44 +165,34 @@
           <h2 class="title">Here is our team</h2>
           <div class="team">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-2" style="margin: 0 auto">
                 <div class="team-player">
-                  <img src="{{URL::to('/')}}/assets/img/avatar.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-                  <h4 class="title">Romina Hadid</h4>
-                  <p class="category text-primary">owner</p>
-                  <p class="description">You can write here details about one of your team members. You can give more
-                    details about what they do. Feel free to add some
-                    <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-instagram"></i></a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-facebook-square"></i></a>
+                  <img src="{{URL::to('/')}}/assets/img/sas.jpeg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                  <h4 class="title">Sasanka</h4>
+                  <p class="category text-primary">Owner</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2" style="margin: 0 auto">
                 <div class="team-player">
                   <img src="{{URL::to('/')}}/assets/img/ryan.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-                  <h4 class="title">Ryan Tompson</h4>
-                  <p class="category text-primary">Stock Keeper</p>
-                  <p class="description">You can write here details about one of your team members. You can give more
-                    details about what they do. Feel free to add some
-                    <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-linkedin"></i></a>
+                  <h4 class="title">Pasindu</h4>
+                  <p class="category text-primary">Admin</p>
                 </div>
               </div>
-              <div class="col-md-4">
+              <div class="col-md-2" style="margin: 0 auto">
                 <div class="team-player">
-                  <img src="{{URL::to('/')}}/assets/img/eva.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
-                  <h4 class="title">Eva Jenner</h4>
-                  <p class="category text-primary">Sales Rep</p>
-                  <p class="description">You can write here details about one of your team members. You can give more
-                    details about what they do. Feel free to add some
-                    <a href="#">links</a> for people to be able to follow them outside the site.</p>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-google-plus"></i></a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-youtube"></i></a>
-                  <a href="#pablo" class="btn btn-primary btn-icon btn-round"><i class="fab fa-twitter"></i></a>
+                  <img src="{{URL::to('/')}}/assets/img/eva.jpeg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                  <h4 class="title">Aathmika</h4>
+                  <p class="category text-primary">Stock Keeper</p>
                 </div>
               </div>
+              <div class="col-md-2" style="margin: 0 auto">
+                  <div class="team-player">
+                    <img src="{{URL::to('/')}}/assets/img/me2.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                    <h4 class="title">Chamodya</h4>
+                    <p class="category text-primary">Sales Rep</p>
+                  </div>
+                </div>
             </div>
           </div>
         </div>
