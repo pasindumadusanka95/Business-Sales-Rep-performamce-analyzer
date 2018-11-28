@@ -110,21 +110,6 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="{{URL::asset('assets/img/blurred-image-1.jpg')}}">
         <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://github.com/creativetimofficial/now-ui-kit/issues"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank"> </a>
-          </li>
           <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                    {{ Auth::user()->name }} <span class="caret"></span>
