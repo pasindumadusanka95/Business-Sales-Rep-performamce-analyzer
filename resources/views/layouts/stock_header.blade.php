@@ -126,7 +126,9 @@
         <div class="page-header-image" data-parallax="true" style="background-image:url('');">
         </div>
         <div class="container">
-                    <img class="rounded-circle img-fluid img-raised" style="width: 200px;height: 190px;margin: 0 auto; background-color: rgba(255, 255, 255, 0.5);" src="{{URL::to('/')}}/assets/img/now-logo.png" alt="">
+            <div class="container">
+                <img class="rounded-circle img-fluid img-raised" style="width: 200px;height: 190px;margin: 0 auto; background-color: rgba(255, 255, 255, 0.5);" src="{{URL::to('/')}}/assets/img/now-logo.png" alt="">
+            </div>
             <h3 class="title">{{ Auth::user()->name }}</h3>
             <p class="category">Stock Keeper</p>
             <div class="content">
