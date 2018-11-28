@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Management;
-
+use App\SalesRep;
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Input;
 
 class managementController extends Controller
 {
@@ -65,6 +68,27 @@ class managementController extends Controller
         }
         $row->save();
         return redirect()->route('management');
+    }
+
+    public function search(Request $request)
+    {
+        $active = 1;
+        $mgt = Management::all();
+        $rep = SalesRep::where('id',$request->id)->first();
+        $grade = $rep->grade;
+        $grow = Management::where('grade',$grade)->first();
+        $gsal = $grow->basic_sal;
+        $grate = $grow->add_rate;
+        $gtarg = $grow->target;
+        $dif = $rep->sales_per_month - $gtarg;
+        if ($dif<0) {
+            $extra = 0;
+        } else {
+            $extra = ($dif*$grate);
+        }
+        $total = $extra + $gsal;
+        return view('management.management',compact('mgt','active','rep','dif','gsal','extra','total'));
+
     }
 
     /**

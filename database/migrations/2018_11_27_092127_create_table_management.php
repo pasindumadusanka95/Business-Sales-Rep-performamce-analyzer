@@ -18,7 +18,7 @@ class CreateTableManagement extends Migration
             $table->integer('grade');
             $table->float('basic_sal',8,2);
             $table->float('add_rate',8,2);
-            
+            $table->integer('target');
         });
     }
 

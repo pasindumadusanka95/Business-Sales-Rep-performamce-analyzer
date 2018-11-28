@@ -50,14 +50,71 @@
                 <h4 class="card-title "><center>Salary Sheet</center></h4>
             </div>
             <div class="card-body">
-                    <form method="POST" action="{{ route('mgstore') }}">
+                    <form method="POST" action="{{ route('mgsearch') }}">
                             @csrf
-                    <input type="text" id="rep_id" name="rep_id" class="form-group">
-                    <button type="submit" class="btn btn-primary">
-                            {{ __('Search') }}
-                        </button>
+                            <div class="input-group no-border">
+                                    <input type="text" value="" name="id" class="form-control" placeholder="Search...">
+                                    <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                      <i class="material-icons">search</i>
+                                      <div class="ripple-container"></div>
+                                    </button>
+                                  </div>
+                
                     </form>
-                    <input type="text" id="basic_sal" name="basic_sal" class="form-group">
+                    @if($active == 1)
+                    
+                    <div class="form-group row justify-content-center">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Sales rep name') }}</label>
+                            <br/>
+                        <div class="col-md-3">
+                          <input id="name" type="text" class="form-control" name="name" placeholder="{{$rep->name}}" >
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                            <label for="sale" class="col-md-4 col-form-label text-md-right">{{ __('Sales per month') }}</label>
+                                <br/>
+                            <div class="col-md-3">
+                              <input id="sale" type="text" class="form-control" name="sale" placeholder="{{$rep->sales_per_month}}" >
+                            </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                            <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Sales Grade') }}</label>
+                                <br/>
+                            <div class="col-md-3">
+                              <input id="grade" type="text" class="form-control" name="grade" placeholder="{{$rep->grade}}" >
+                            </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                            <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Extra Sales') }}</label>
+                                <br/>
+                            <div class="col-md-3">
+                              <input id="grade" type="text" class="form-control" name="grade" placeholder="{{$dif}}" >
+                            </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                            <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Basic Salary') }}</label>
+                                <br/>
+                            <div class="col-md-3">
+                              <input id="grade" type="text" class="form-control" name="grade" placeholder="{{$gsal}}" >
+                            </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                            <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Extra Payment') }}</label>
+                                <br/>
+                            <div class="col-md-3">
+                              <input id="grade" type="text" class="form-control" name="grade" placeholder="{{$extra}}" >
+                            </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                            <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Gross Salary') }}</label>
+                                <br/>
+                            <div class="col-md-3">
+                              <input id="grade" type="text" class="form-control" name="grade" placeholder="{{$total}}" >
+                            </div>
+                    </div>
+
+                    @endif
+                    
             </div>
         </div>
         

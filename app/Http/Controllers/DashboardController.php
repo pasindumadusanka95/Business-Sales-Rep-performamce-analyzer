@@ -80,8 +80,9 @@ class DashboardController extends Controller
 
     protected function management()
     {
+        $active = 0;
         $mgt = Management::all();
-        return view('management.management',compact('mgt'));
+        return view('management.management',compact('mgt','active'));
     }
 
     /**
