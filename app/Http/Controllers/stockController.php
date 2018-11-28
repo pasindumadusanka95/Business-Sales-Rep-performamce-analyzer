@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use app\stock;
+use App\stock;
 use Illuminate\Http\Request;
 
 class stockController extends Controller
@@ -24,7 +24,6 @@ class stockController extends Controller
     }
     public function addStock()
     {
-        dd();
         return view('stock_keeper.add_stock');
     }
 
@@ -49,23 +48,21 @@ class stockController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $this->validate($request, [
             'stock_name' => 'required',
-
             'stock_qty' => 'required|integer',
             'buying_price' => 'required|float',
             'selling_price' => 'required|float',
             'stored_date' => 'required|date',
         ]);
-        $stock = new stock([
-            'stock_name' => $request->get('stock_name'),
 
-            'stock_qty' => $request->get('stock_qty'),
-            'buying_price' => $request->get('buying_price'),
-            'selling_price' => $request->get('selling_price'),
-            'stored_date' => $request->get('stored_date'),
+        $stock = new stock;
+        $stock->stock_name = $request->input('stock_name');
+        $stock->stock_qty = $request->input('stock_qty');
+        $stock->buying_price = $request->input('buying_price');
+        $stock->selling_price = $request->input('selling_price');
+        $stock->stored_date = $request->input('stored_date');
 
-        ]);
         $stock->save();
         return redirect('/stock_keeper')->with('success', 'Stock has been added');
     }
@@ -103,13 +100,13 @@ class stockController extends Controller
     {
         $request->validate([
 
-            'stock_name'=>'required',
+            'stock_name' => 'required',
 
-            'stock_qty'=> 'required|integer',
+            'stock_qty' => 'required|integer',
 
             'stock_name' => 'required',
             'stock_qty' => 'required|integer',
- 
+
             'buying_price' => 'required|integer',
             'selling_price' => 'required|integer',
             'stored_date' => 'required|integer',
@@ -135,6 +132,9 @@ class stockController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stock = stock::find($id);
+        $stock->delete();
+
+        return redirect('/stock_keeper')->with('success', 'Stock has been deleted Successfully');
     }
 }

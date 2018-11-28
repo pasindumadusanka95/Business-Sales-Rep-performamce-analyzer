@@ -85,8 +85,8 @@
 
                         $(document).ready(function(){
                             var element_to_scroll_to = document.getElementById('sale');
-                            var navbar_height = 0;
-                            animate_scroll(element_to_scroll_to, navbar_height, 25);
+                            var navbar_height = 20;
+                            animate_scroll(element_to_scroll_to, navbar_height, 100);
                             
                             
                             function animate_scroll (element, variable, offset) {

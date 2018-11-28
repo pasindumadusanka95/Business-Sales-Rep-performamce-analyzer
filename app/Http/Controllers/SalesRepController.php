@@ -6,6 +6,7 @@ use App\SalesData;
 use App\SalesRep;
 use App\stock;
 use App\User;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Khill\Lavacharts\Lavacharts;
@@ -27,32 +28,94 @@ class SalesRepController extends Controller
     }
     public function profile()
     {
-        $lava = new Lavacharts;
-
-        $sales_performance = $lava->DataTable(); // Lava::DataTable() if using Laravel
-
-        $sales_performance->addDateColumn('Day of Month')
-            ->addNumberColumn('Projected')
-            ->addNumberColumn('Official');
-
-        // Random Data For Example
-        for ($a = 1; $a < 30; $a++) {
-            $sales_performance->addRow([
-                '2015-10-' . $a, rand(800, 1000), rand(800, 1000),
-            ]);
-        }
-
-        $chart = \Lava::LineChart('MyStocks', $sales_performance, [
-            'title' => 'This works in laravel 5.2',
-            'fontSize' => 24,
-        ]);
 
         $totalsales = SalesData::count();
         $user = Auth::user();
         $id = $user->id;
         $srep = SalesRep::where('id', $id)->first();
+        $numsales = DB::select(DB::raw("SELECT count(`total_price`) AS 'numSales',sum(`total_price`) AS 'totalRevenue',DATE(`created_at`) AS 'Date' FROM sales where sales.repid=$id GROUP BY DATE(`created_at`);"));
+        //$sales = json_encode($sales);
+        //foreach ($sales as $i) {
+        // \error_log("test new");
+        // for ($a = 0; $a < sizeof($sales); $a++) {
+        //     print("");
+        //     print_r($sales[$a]->total_price);
+        // }
+
+        $lava = new Lavacharts;
+
+        $sales_performance = $lava->DataTable(); // Lava::DataTable() if using Laravel
+
+        $sales_performance->addDateColumn('Day of Month')
+            ->addNumberColumn('Sale');
+
+        foreach ($numsales as $i) {
+            $sales_performance->addRow([
+                $i->Date, $i->numSales,
+            ]);
+        };
+
+        $chart = \Lava::CalendarChart('FreqSales', $sales_performance, [
+            'title' => 'Frequency of Sales',
+            'fontSize' => 12,
+            'unusedMonthOutlineColor' => [
+                'stroke' => '#ECECEC',
+                'strokeOpacity' => 0.75,
+                'strokeWidth' => 1,
+            ],
+            'dayOfWeekLabel' => [
+                'color' => '#4f5b0d',
+                'fontSize' => 16,
+                'italic' => true,
+            ],
+            'noDataPattern' => [
+                'color' => '#DDD',
+            ],
+            'colorAxis' => [
+                'colors' => ['#ffb8a0', '#f96332'],
+            ],
+        ]);
+
+        $sales_totalRev = $lava->DataTable();
+
+        $sales_totalRev->addDateColumn('Day of Month')
+            ->addNumberColumn('Revenue');
+
+        foreach ($numsales as $i) {
+            $sales_totalRev->addRow([
+                $i->Date, $i->totalRevenue,
+            ]);
+        };
+
+        $chart2 = \Lava::ColumnChart('SalesRev', $sales_totalRev, [
+            'title' => 'Revenue Per Day',
+            'titleTextStyle' => [
+                'fontSize' => 12,
+            ],
+            'colors' => ['#f96332'],
+            'opacity' => [0.5],
+        ]);
+
+        $sales_perType = $lava->DataTable();
+
+        $sales_perType->addStringColumn('Type')
+            ->addNumberColumn('Quantity');
+
+        $sperType = DB::select(DB::raw("SELECT sum(`quantity`) as 'Quantity',`stock_type` from sales where sales.repid=$id Group By `stock_type`"));
+        foreach ($sperType as $m) {
+            $sales_perType->addRow([
+                $m->stock_type, $m->Quantity,
+            ]);
+        }
+
+        $chart3 = \Lava::BarChart('SalesPType', $sales_perType, [
+            'title' => 'Sales Per Type',
+            'fontSize' => 12,
+            'colors' => ['#f96332'],
+        ]);
+
         //include $user & $srep -> view repProfile
-        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'MyStocks'));
+        return view('sales_rep.repProfile', compact('user', 'srep', 'totalsales', 'FreqSales', 'SalesRev', 'SalesPType'));
     }
     public function addSale()
     {

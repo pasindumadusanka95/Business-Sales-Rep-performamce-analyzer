@@ -43,7 +43,7 @@
     Sales Rep Profile
 </h1>
 </div>
-<div class="col-lg-3 col-md-6 col-sm-6">
+<!--div class="col-lg-3 col-md-6 col-sm-6">
   <div class="card card-stats">
       <div class="card-header-sales">
           <div class="card-icon-sales">
@@ -63,8 +63,16 @@
           <label class="card-title-sales"> {{$totalsales}} </label>
       </div>
   </div>
-</div>
-<div id="mychart"></div>
-{!! \Lava::render('LineChart', 'MyStocks', 'mychart') !!}
+</div-->
+<div id="mychart" style="width: 1000px;height: auto;margin: 0 auto;"></div>
 
+{!! \Lava::render('CalendarChart', 'FreqSales', 'mychart') !!}
+
+<div id="mychart2" style="width: 1000px;height: auto;margin: 0 auto;"></div>
+
+{!! \Lava::render('ColumnChart', 'SalesRev', 'mychart2') !!}
+
+<div id="mychart3" style="width: 1000px;height: auto;margin: 0 auto;"></div>
+
+{!! \Lava::render('BarChart', 'SalesPType', 'mychart3') !!}
 @endsection

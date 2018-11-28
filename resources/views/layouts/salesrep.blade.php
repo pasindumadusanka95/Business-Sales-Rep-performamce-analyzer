@@ -181,7 +181,7 @@
     @yield('content')
               
               </div>
-    <footer class="footer footer-default">
+    <!--footer class="footer footer-default">
       <div class="container">
         <nav>
           <ul>
@@ -211,7 +211,7 @@
           <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
         </div>
       </div>
-    </footer>
+    </footer-->
   </div>
   <!--   Core JS Files   -->
   <!--<script src="{{URL::asset('assets/js/core/jquery.min.js')}}" type="text/javascript"></script>!-->

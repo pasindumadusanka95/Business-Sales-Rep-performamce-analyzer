@@ -411,6 +411,7 @@ class ComposerStaticInitef90483ae1dd8da7dee86debd1d6487c
         'App\\Http\\Controllers\\Auth\\VerificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerificationController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\FeedbackController' => __DIR__ . '/../..' . '/app/Http/Controllers/FeedbackController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\SalesRepController' => __DIR__ . '/../..' . '/app/Http/Controllers/SalesRepController.php',
         'App\\Http\\Controllers\\stockController' => __DIR__ . '/../..' . '/app/Http/Controllers/stockController.php',
