@@ -71,4 +71,8 @@
 <div id="mychart2" style="width: 1000px;height: auto;margin: 0 auto;"></div>
 
 {!! \Lava::render('ColumnChart', 'SalesRev', 'mychart2') !!}
+
+<div id="mychart3" style="width: 1000px;height: auto;margin: 0 auto;"></div>
+
+{!! \Lava::render('BarChart', 'SalesPType', 'mychart3') !!}
 @endsection

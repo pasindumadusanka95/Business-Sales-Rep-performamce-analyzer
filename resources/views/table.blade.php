@@ -2,7 +2,7 @@
 @section('content')
 
 
-    <form class="navbar-form">
+    <form class="navbar-form" action="">
         <div class="input-group no-border">
             <input type="text" value="" class="form-control" placeholder="Search...">
             <button type="submit" class="btn btn-white btn-round btn-just-icon">
