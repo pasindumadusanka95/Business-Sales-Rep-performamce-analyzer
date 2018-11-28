@@ -91,6 +91,15 @@ class managementController extends Controller
 
     }
 
+    public function addsal(Request $request)
+    {
+        $mgt = Management::all();
+        $row = SalesRep::where('id',$request->id)->first();
+        $row->salary = $request->tot;
+        $active = 0;
+        $row->save();
+        return view('management.management',compact('mgt','active'));
+    }
     /**
      * Display the specified resource.
      *

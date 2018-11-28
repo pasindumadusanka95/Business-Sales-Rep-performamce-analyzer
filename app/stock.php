@@ -12,10 +12,10 @@ class stock extends Model
 
     protected $fillable = [
         'id',
-        'stock_name',
-        'stock_qty',
-        'buying_price',
-        'selling_price',
+        'stockName',
+        'stockQuantity',
+        'buyingPrice',
+        'sellingPrice',
         'stored_date'
     ];
 }

@@ -113,3 +113,4 @@ Route::get('mgedit3','managementController@index3')->name('mgedit3');
 Route::post('/admin/management/mgstore','managementController@store')->name('mgstore');
 
 Route::post('/admin/management/mgsearch','managementController@search')->name('mgsearch');
+Route::post('admin/management/addsal','managementController@addsal')->name('addSal');

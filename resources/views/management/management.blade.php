@@ -58,11 +58,13 @@
                                       <i class="material-icons">search</i>
                                       <div class="ripple-container"></div>
                                     </button>
-                                  </div>
+                            </div>
                 
                     </form>
                     @if($active == 1)
-                    
+                    <form method="POST" action="{{ route('addSal') }}">
+                            @csrf
+                    <input id="id" type="hidden" name="id" value="{{ $rep->id }}">
                     <div class="form-group row justify-content-center">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Sales rep name') }}</label>
                             <br/>
@@ -109,10 +111,19 @@
                             <label for="grade" class="col-md-4 col-form-label text-md-right">{{ __('Gross Salary') }}</label>
                                 <br/>
                             <div class="col-md-3">
-                              <input id="grade" type="text" class="form-control" name="grade" placeholder="{{$total}}" >
+                              <input id="tot1" type="text" class="form-control" name="tot1" value="{{$total}}" disabled>
+                              <input id="tot" type="text" class="form-control" name="tot" value="{{$total}}" hidden>
+                            </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Add Salary') }}
+                                </button>
                             </div>
                     </div>
 
+                    </form>
                     @endif
                     
             </div>
