@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.stock_header')
 
 @section('content')
     <style>
@@ -20,7 +20,7 @@
                     </ul>
                 </div><br />
             @endif
-            <form method="post" action="{{ route('stock_keeper.update', $stock->id) }}">
+            <form method="post" action="{{ route('updatestock', $stock->id) }}">
                 @method('PATCH')
                 @csrf
                 <div class="form-group">

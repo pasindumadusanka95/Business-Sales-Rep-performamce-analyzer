@@ -51,8 +51,8 @@ class stockController extends Controller
         $this->validate($request, [
             'stock_name' => 'required',
             'stock_qty' => 'required|integer',
-            'buying_price' => 'required|float',
-            'selling_price' => 'required|float',
+            'buying_price' => 'required|integer',
+            'selling_price' => 'required|integer',
             'stored_date' => 'required|date',
         ]);
 
@@ -64,7 +64,7 @@ class stockController extends Controller
         $stock->stored_date = $request->input('stored_date');
 
         $stock->save();
-        return redirect('/stock_keeper')->with('success', 'Stock has been added');
+        return redirect('/stock_keeper_profile')->with('success', 'Stock has been added');
     }
 
     /**
@@ -75,7 +75,8 @@ class stockController extends Controller
      */
     public function show($id)
     {
-        //
+        $stock = stock::where('id',$id)->first();
+        return view('stock_keeper.edit',compact('stock'));
     }
 
     /**
@@ -86,7 +87,7 @@ class stockController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -121,7 +122,7 @@ class stockController extends Controller
         $stock->stored_date = $request->get('stored_date');
         $stock->save();
 
-        return redirect('/stock_keeper')->with('success', 'Stock has been updated');
+        return redirect()->route('editstock');
     }
 
     /**
@@ -132,6 +133,10 @@ class stockController extends Controller
      */
     public function destroy($id)
     {
+
+    }
+
+    public function delete($id){
         $stock = stock::find($id);
         $stock->delete();
 
