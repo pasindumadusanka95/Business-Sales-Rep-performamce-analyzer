@@ -75,4 +75,20 @@
 <div id="mychart3" style="width: 1000px;height: auto;margin: 0 auto;"></div>
 
 {!! \Lava::render('BarChart', 'SalesPType', 'mychart3') !!}
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+      var element_to_scroll_to = document.getElementById('mychart');
+      var navbar_height = 20;
+      animate_scroll(element_to_scroll_to, navbar_height, 100);
+      
+      
+      function animate_scroll (element, variable, offset) {
+      $('html, body').stop().animate({
+      scrollTop: $(element).offset().top - variable - offset
+  }, 600);
+  }
+  });
+</script>
 @endsection

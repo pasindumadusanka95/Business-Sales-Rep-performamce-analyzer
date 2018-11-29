@@ -50,22 +50,23 @@ class stockController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'stock_name' => 'required',
-            'stock_qty' => 'required|integer',
-            'buying_price' => 'required|integer',
-            'selling_price' => 'required|integer',
-            'stored_date' => 'required|date',
+            'stockName' => 'required',
+            'stockQuantity' => 'required|integer',
+            'buyingPrice' => 'required|integer',
+            'sellingPrice' => 'required|integer',
+            'storedDate' => 'required|date',
         ]);
 
         $stock = new stock;
-        $stock->stock_name = $request->input('stock_name');
-        $stock->stock_qty = $request->input('stock_qty');
-        $stock->buying_price = $request->input('buying_price');
-        $stock->selling_price = $request->input('selling_price');
-        $stock->stored_date = $request->input('stored_date');
+        $stock->stockName = $request->input('stockName');
+        $stock->stockQuantity = $request->input('stockQuantity');
+        $stock->buyingPrice = $request->input('buyingPrice');
+        $stock->sellingPrice = $request->input('sellingPrice');
+        $stock->storedDate = $request->input('storedDate');
 
         $stock->save();
-        return viewStock()->with('success', 'Stock has been added');
+        $request->session()->flash('alert-success', 'Stock has been added Successfully');
+        return redirect()->route('stockview');
     }
 
     /**
@@ -100,30 +101,30 @@ class stockController extends Controller
      */
     public function update(Request $request)
     {
-        $request->validate([
+        error_log("called" . $request->stockName);
+/*
+$request->validate([
 
-            'stock_name' => 'required',
-
-            'stock_qty' => 'required|integer',
-
-            'stock_name' => 'required',
-            'stock_qty' => 'required|integer',
-
-            'buying_price' => 'required|integer',
-            'selling_price' => 'required|integer',
-            'stored_date' => 'required|integer',
-        ]);
-
+'stockName' => 'required',
+'stockQuantity' => 'required|integer',
+'buyingPrice' => 'required|integer',
+'sellingPrice' => 'required|integer',
+'storedDate' => 'required',
+]);
+ */
         $stock = stock::find($request->id);
-        $stock->stock_name = $request->get('stock_name');
+        $stock->stockName = $request->stockName;
+        error_log("stock");
 
-        $stock->stock_qty = $request->get('stock_qty');
-        $stock->buying_price = $request->get('buying_price');
-        $stock->selling_price = $request->get('selling_price');
-        $stock->stored_date = $request->get('stored_date');
+        $stock->stockQuantity = $request->stockQuantity;
+        $stock->buyingPrice = $request->buyingPrice;
+        $stock->sellingPrice = $request->sellingPrice;
+        $stock->storedDate = $request->storedDate;
         $stock->save();
 
-        return viewStock()->with('success', 'Stock has been updated Successfully');
+        $request->session()->flash('alert-success', 'Stock has been updated Successfully');
+        //return $this->viewStock();
+        return redirect()->route('stockview');
     }
 
     /**
@@ -140,8 +141,18 @@ class stockController extends Controller
     public function delete(Request $request)
     {
         $stock = stock::find($request->id);
-        $stock->delete();
+        print_r($request->id);
+        if ($stock != null) {
+            //print_r($stock);
+            $stock->delete();
 
-        return viewStock()->with('success', 'Stock has been deleted Successfully');
+            $request->session()->flash('alert-success', 'Stock has been deleted Successfully');
+            //return $this->viewStock();
+            return redirect()->route('stockview');
+        } else {
+            $request->session()->flash('alert-danger', 'Error! Please try again');
+            //return $this->viewStock();
+            return redirect()->route('stockview');
+        }
     }
 }

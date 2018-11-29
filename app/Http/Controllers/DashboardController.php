@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
 use App\Http\Controllers\Controller;
 use App\Management;
 use App\SalesData;
@@ -38,7 +39,7 @@ class DashboardController extends Controller
 
         foreach ($result as $results) {
             $sales_performance->addRow([
-                $results->year . '-' . $results->month . '-01',
+                $results->year . '-' . $results->month,
                 $results->count,
             ]);
         }
@@ -112,8 +113,9 @@ class DashboardController extends Controller
         $Sales = SalesData::select('shop_name', 'shop_address', 'stock_type', 'quantity', 'unit_price', 'discount', 'total_price', 'receiptNo', 'remarks')->get();
         $SalesRepD = SalesRep::select('name', 'email', 'address', 'phone', 'salary', 'grade', 'sales_per_month')->get();
         $Stocks = stock::all();
+        $Message = Feedback::all();
 
-        return view('table', compact('Sales', 'SalesRepD', 'Stocks'));
+        return view('table', compact('Sales', 'SalesRepD', 'Stocks', 'Message'));
     }
 
     public function registration()
@@ -171,6 +173,7 @@ class DashboardController extends Controller
             ]);
         }
 
+        $request->session()->flash('alert-success', 'User registered successfully');
         return redirect()->route('registration');
 
     }
@@ -188,6 +191,15 @@ class DashboardController extends Controller
             'user_role' => $roles,
         ]);
 
+        if ($roles == 1) {
+            $userupdatesalesrep = SalesRep::where('email', $request->email)->update([
+                'name' => $request->name,
+                'address' => $request->address,
+                'phone' => $request->phone,
+            ]);
+        }
+
+        $request->session()->flash('alert-success', 'User updated successfully');
         return redirect()->route('manageusers');
 
     }
@@ -196,7 +208,7 @@ class DashboardController extends Controller
     {
 
         $userdelete = User::where('email', $request->email)->delete();
-
+        $request->session()->flash('alert-success', 'User deleted successfully');
         return redirect()->route('deleteusers');
     }
 

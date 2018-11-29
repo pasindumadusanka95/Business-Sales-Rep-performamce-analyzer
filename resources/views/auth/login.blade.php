@@ -45,7 +45,7 @@
                   </div>
                   <div class="card-footer text-center">
                     <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Submit</button>
-                    <div class="pull-left">
+                    <!--div class="pull-left">
                       
                             <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -60,7 +60,7 @@
                                     {{ __('Forgot Your Password?') }}
                             </a>
                       </h6>
-                    </div>
+                    </div-->
                 </form>
                 </div>
               </div>
